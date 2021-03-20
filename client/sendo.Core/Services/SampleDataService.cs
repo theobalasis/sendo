@@ -481,13 +481,6 @@ namespace sendo.Core.Services
             };
         }
 
-        // TODO WTS: Remove this once your MasterDetail pages are displaying real data.
-        public static async Task<IEnumerable<SampleOrder>> GetMasterDetailDataAsync()
-        {
-            await Task.CompletedTask;
-            return AllOrders();
-        }
-
         // TODO WTS: Remove this once your grid page is displaying real data.
         public static async Task<IEnumerable<SampleOrder>> GetGridDataAsync()
         {

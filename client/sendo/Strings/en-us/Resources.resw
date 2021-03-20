@@ -145,18 +145,6 @@
     <value>Main</value>
     <comment>Menu item text for Main</comment>
   </data>
-  <data name="MasterDetail_NoSelection.Text" xml:space="preserve">
-    <value>Select an item from the list.</value>
-    <comment>No selection text for MasterDetail</comment>
-  </data>
-  <data name="MasterDetail.MasterHeader" xml:space="preserve">
-    <value>MasterDetail</value>
-    <comment>Title for MasterDetailPage</comment>
-  </data>
-  <data name="ShellMenuItem_Views_MasterDetail.Text" xml:space="preserve">
-    <value>MasterDetail</value>
-    <comment>Menu item text for MasterDetail</comment>
-  </data>
   <data name="TelerikDataGrid_Title.Text" xml:space="preserve">
     <value>TelerikDataGrid</value>
     <comment>Page title for TelerikDataGridPage</comment>

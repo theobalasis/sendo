@@ -8,11 +8,11 @@
   IgnorableNamespaces="uap mp genTemplate">
 
   <Identity
-    Name="81FDE14C-52C8-4038-A776-1BFCEB1B22FC"
+    Name="683EE347-9335-4525-A31A-2874F34CC2E5"
     Publisher="CN=Akman"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="81FDE14C-52C8-4038-A776-1BFCEB1B22FC" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="683EE347-9335-4525-A31A-2874F34CC2E5" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>sendo</DisplayName>
