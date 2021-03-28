@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Style="{StaticResource PageStyle}"
     xmlns:tg="using:Telerik.UI.Xaml.Controls.Grid"
-    xmlns:model="using:sendo.Core.Models"
+    xmlns:model="using:sendo.Core.Services"
     mc:Ignorable="d">
     <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
         <Grid.RowDefinitions>

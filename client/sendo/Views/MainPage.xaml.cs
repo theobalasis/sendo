@@ -1,4 +1,5 @@
-﻿using System;
+﻿using sendo.Core.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -31,11 +32,7 @@ namespace sendo.Views
 
         private void AddVar(object sender, ItemClickEventArgs e)
         {
-            string clickedItemText = e.ClickedItem.ToString();
-            string editortext;
-            editor.Document.GetText(Windows.UI.Text.TextGetOptions.AdjustCrlf, out editortext);
-            clickedItemText += editortext;
-            editor.Document.SetText(Windows.UI.Text.TextSetOptions.None, clickedItemText);
+            editor.Document.Selection.SetText(Windows.UI.Text.TextSetOptions.None, e.ClickedItem.ToString());
         }
         private async void OpenButton_Click(object sender, RoutedEventArgs e)
         {
@@ -145,6 +142,12 @@ namespace sendo.Views
                 }
                 selectedText.CharacterFormat = charFormatting;
             }
+        }
+
+        private void fetchitems(object sender, RoutedEventArgs e)
+        {
+            VariableList.Items.Clear();
+            VariableList.Items.Add("a");
         }
     }
 }

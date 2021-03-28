@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace sendo.Core.Models
+namespace sendo.Core.Services
 {
     // TODO WTS: Remove this class once your pages/features are using your data.
     // This is used by the SampleDataService.

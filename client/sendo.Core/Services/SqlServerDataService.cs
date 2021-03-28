@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
-using sendo.Core.Models;
+using sendo.Core.Services;
 
 namespace sendo.Core.Services
 {
