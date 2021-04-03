@@ -32,7 +32,9 @@ namespace sendo.Views
 
         private void AddVar(object sender, ItemClickEventArgs e)
         {
-            editor.Document.Selection.SetText(Windows.UI.Text.TextSetOptions.None, e.ClickedItem.ToString());
+            var selection = editor.Document.Selection;
+            selection.SetText(Windows.UI.Text.TextSetOptions.None, e.ClickedItem.ToString());
+            selection.StartPosition = selection.StoryLength;
         }
         private async void OpenButton_Click(object sender, RoutedEventArgs e)
         {
@@ -148,6 +150,11 @@ namespace sendo.Views
         {
             VariableList.Items.Clear();
             VariableList.Items.Add("a");
+        }
+
+        private void EditorLostFocus(object sender, RoutedEventArgs e)
+        {
+            editor.Focus(FocusState.Programmatic);
         }
     }
 }

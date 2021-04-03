@@ -24,7 +24,7 @@
             Style="{StaticResource PageTitleStyle}" />
             <RelativePanel Margin="0,25,0,0" Grid.Column="1" Grid.Row="2" >
             <AppBarButton x:Name="Reloadcol" Icon="Redo" Click="fetchitems"  />
-            <ListView x:Name="VariableList" RelativePanel.Below="Reloadcol" HorizontalAlignment="Left" Margin="10,10,0,10" SelectionMode="None" IsItemClickEnabled="True" ItemClick="AddVar">
+            <ListView x:Name="VariableList" RelativePanel.Below="Reloadcol" HorizontalAlignment="Left" Margin="10,10,0,10" SelectionMode="None" IsItemClickEnabled="True" ItemClick="AddVar" IsRightTapEnabled="False" IsHoldingEnabled="False" IsDoubleTapEnabled="False">
                     <x:String>Apricot</x:String>
                     <x:String>Banana</x:String>
                     <x:String>Cherry</x:String>
@@ -51,7 +51,7 @@
                 <AppBarButton x:Name="underlineButton" Icon="Underline" Click="UnderlineButton_Click"
                             ToolTipService.ToolTip="Underline" RelativePanel.AlignRightWithPanel="True"/>
 
-                <RichEditBox x:Name="editor" RelativePanel.Below="openFileButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignBottomWithPanel="True"/>
+                <RichEditBox x:Name="editor" RelativePanel.Below="openFileButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignBottomWithPanel="True" LostFocus="EditorLostFocus"/>
             </RelativePanel>
 
     </Grid>
