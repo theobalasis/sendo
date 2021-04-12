@@ -25,12 +25,7 @@
             <RelativePanel Margin="0,25,0,0" Grid.Column="1" Grid.Row="2" >
             <AppBarButton x:Name="Reloadcol" Icon="Redo" Click="fetchitems"  />
             <ListView x:Name="VariableList" RelativePanel.Below="Reloadcol" HorizontalAlignment="Left" Margin="10,10,0,10" SelectionMode="None" IsItemClickEnabled="True" ItemClick="AddVar" IsRightTapEnabled="False" IsHoldingEnabled="False" IsDoubleTapEnabled="False">
-                    <x:String>Apricot</x:String>
-                    <x:String>Banana</x:String>
-                    <x:String>Cherry</x:String>
-                    <x:String>Orange</x:String>
-                    <x:String>Strawberry</x:String>
-                </ListView>
+            </ListView>
         </RelativePanel>
         <RelativePanel Margin="0,25,0,0" Grid.Column="2" Grid.Row="2" >
                 <RelativePanel.Resources>
