@@ -36,6 +36,7 @@
                 <winui:MenuBarItem x:Uid="ShellMenuBarItem_Views">
                     <MenuFlyoutItem x:Uid="ShellMenuItem_Views_Main" Click="ShellMenuItemClick_Views_Main" />
                     <MenuFlyoutItem x:Uid="ShellMenuItem_Views_TelerikDataGrid" Click="ShellMenuItemClick_Views_TelerikDataGrid" />
+                    <MenuFlyoutItem x:Uid="ShellMenuBarItem_Views_Login" Click="ShellMenuItemClick_Views_Login"/>
                 </winui:MenuBarItem>
             </winui:MenuBar>
             <Grid Grid.Row="1">

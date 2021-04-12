@@ -56,6 +56,11 @@ namespace sendo.Views
             Application.Current.Exit();
         }
 
+        private void ShellMenuItemClick_Views_Login(object sender, RoutedEventArgs e)
+        {
+            MenuNavigationHelper.UpdateView(typeof(Login));
+        }
+
         private static KeyboardAccelerator BuildKeyboardAccelerator(VirtualKey key, VirtualKeyModifiers? modifiers = null)
         {
             var keyboardAccelerator = new KeyboardAccelerator() { Key = key };
