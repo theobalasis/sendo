@@ -93,5 +93,10 @@ namespace sendo.Views
         }
 
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+        private void ShellMenuItemClick_Views_Campaing(object sender, RoutedEventArgs e)
+        {
+                MenuNavigationHelper.UpdateView(typeof(BlankPage1));
+        }
     }
 }

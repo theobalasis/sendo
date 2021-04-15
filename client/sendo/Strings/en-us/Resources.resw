@@ -199,5 +199,10 @@
   </data>
   <data name="ShellMenuBarItem_Views_Login.Text" xml:space="preserve">
     <value>Login</value>
+    <comment>Meun bar item for Login</comment>
+  </data>
+  <data name="ShellMenuBarItem_Views_Campaing.Text" xml:space="preserve">
+    <value>Campaign</value>
+    <comment>View for Campain editing.</comment>
   </data>
 </root>
