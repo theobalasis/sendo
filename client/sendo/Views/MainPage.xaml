@@ -35,9 +35,12 @@
                 </RelativePanel.Resources>
                 <AppBarButton x:Name="openFileButton" Icon="OpenFile"
                             Click="OpenButton_Click" ToolTipService.ToolTip="Open file"/>
-                <AppBarButton Icon="Save" Click="SaveButton_Click"
+            <AppBarButton x:Name="saveFileButton" Icon="Save" Click="SaveButton_Click"
                             ToolTipService.ToolTip="Save file"
                             RelativePanel.RightOf="openFileButton" Margin="8,0,0,0"/>
+                <AppBarButton Icon="Save" Click="SaveComp_Click"
+                            ToolTipService.ToolTip="Save complete file"
+                            RelativePanel.RightOf="saveFileButton" Margin="8,0,0,0" Background="#FFCDCDCD"/>
 
                 <AppBarButton Icon="Bold" Click="BoldButton_Click" ToolTipService.ToolTip="Bold"
                             RelativePanel.LeftOf="italicButton" Margin="0,0,8,0"/>

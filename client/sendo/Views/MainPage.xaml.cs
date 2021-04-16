@@ -2,7 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -33,7 +36,8 @@ namespace sendo.Views
         private void AddVar(object sender, ItemClickEventArgs e)
         {
             var selection = editor.Document.Selection;
-            selection.SetText(Windows.UI.Text.TextSetOptions.None, e.ClickedItem.ToString());
+            String replace = "<"+e.ClickedItem.ToString()+">";
+            selection.SetText(Windows.UI.Text.TextSetOptions.None, replace );
             selection.StartPosition = selection.StoryLength;
         }
         private async void OpenButton_Click(object sender, RoutedEventArgs e)
@@ -143,15 +147,69 @@ namespace sendo.Views
             }
         }
 
-        private void fetchitems(object sender, RoutedEventArgs e)
+        private async void fetchitems(object sender, RoutedEventArgs e)
         {
             VariableList.Items.Clear();
             VariableList.Items.Add("a");
+            var data = await SampleDataService.GetGridDataAsync();
+            foreach (var item in data)
+            {
+                VariableList.Items.Add(item);
+            }
         }
 
         private void EditorLostFocus(object sender, RoutedEventArgs e)
         {
             editor.Focus(FocusState.Programmatic);
+        }
+
+        private async void SaveComp_Click(object sender, RoutedEventArgs e)
+        {
+            var patern = "<.+>";
+            String editortext = string.Empty;
+            editor.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out editortext);
+            var data = await SampleDataService.GetGridDataAsync();
+            var comp = varsplit(editortext , patern, data);
+            Windows.Storage.Pickers.FileSavePicker savePicker = new Windows.Storage.Pickers.FileSavePicker();
+            savePicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
+
+            // Dropdown of file types the user can save the file as
+            savePicker.FileTypeChoices.Add("Rich Text", new List<string>() { ".rtf" });
+
+            // Default file name if the user does not type one in or select a file to replace
+            savePicker.SuggestedFileName = "New Document";
+
+            Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
+            if (file != null)
+            {
+                await FileIO.WriteTextAsync(file, comp);
+
+                // Let Windows know that we're finished changing the file so the
+                // other app can update the remote version of the file.
+                Windows.Storage.Provider.FileUpdateStatus status = await Windows.Storage.CachedFileManager.CompleteUpdatesAsync(file);
+                if (status != Windows.Storage.Provider.FileUpdateStatus.Complete)
+                {
+                    Windows.UI.Popups.MessageDialog errorBox =
+                        new Windows.UI.Popups.MessageDialog("File " + file.Name + " couldn't be saved.");
+                    await errorBox.ShowAsync();
+                }
+            }
+        }
+        private String varsplit(String crude,string replacer, IEnumerable<SampleOrder> data ) {
+            
+            string comp = String.Empty;
+            string oldvalue = String.Empty;
+            string newvalue = String.Empty;
+            foreach (var item in data)
+            {
+                oldvalue = "<" + item + ">";
+                newvalue = "" + item + "";
+                Debug.WriteLine(oldvalue);
+                Debug.WriteLine(newvalue);
+                comp = crude.Replace( oldvalue , newvalue);
+                crude = comp;
+            }
+                return comp;
         }
     }
 }
