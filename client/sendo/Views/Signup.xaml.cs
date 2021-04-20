@@ -21,9 +21,9 @@ namespace sendo.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Login : Page
+    public sealed partial class Signup : Page
     {
-        public Login()
+        public Signup()
         {
             this.InitializeComponent();
         }
@@ -33,9 +33,9 @@ namespace sendo.Views
 
         }
 
-        private void tosignup(object sender, RoutedEventArgs e)
+        private void tologin(object sender, RoutedEventArgs e)
         {
-            MenuNavigationHelper.UpdateView(typeof(Signup));
+                MenuNavigationHelper.UpdateView(typeof(Login));
         }
 
         private void toCampaign(object sender, RoutedEventArgs e)
