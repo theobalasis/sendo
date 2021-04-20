@@ -96,7 +96,11 @@ namespace sendo.Views
 
         private void ShellMenuItemClick_Views_Campaing(object sender, RoutedEventArgs e)
         {
-                MenuNavigationHelper.UpdateView(typeof(BlankPage1));
+                MenuNavigationHelper.UpdateView(typeof(Campaign));
+        }
+        public static void EnableShell()
+        {
+            
         }
     }
 }
