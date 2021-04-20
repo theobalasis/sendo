@@ -8,6 +8,7 @@
     Style="{StaticResource PageStyle}"
     Loaded="OnLoaded"
     mc:Ignorable="d">
+    
 
     <SplitView
         x:Name="splitView"
@@ -25,7 +26,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <winui:MenuBar VerticalAlignment="Top">
+            <winui:MenuBar x:Name="lmenubar" VerticalAlignment="Top" IsEnabled="True">
                 <!--
                 TODO WTS: You can edit the text for the menu in String/en-US/Resources.resw
                 -->
@@ -38,6 +39,10 @@
                     <MenuFlyoutItem x:Uid="ShellMenuItem_Views_TelerikDataGrid" Click="ShellMenuItemClick_Views_TelerikDataGrid" />
                     <MenuFlyoutItem x:Uid="ShellMenuBarItem_Views_Login" Click="ShellMenuItemClick_Views_Login"/>
                     <MenuFlyoutItem x:Uid="ShellMenuBarItem_Views_Campaing" Click="ShellMenuItemClick_Views_Campaing"/>
+                </winui:MenuBarItem>
+                <winui:MenuBarItem x:Uid="ShellMenuBarItem_Info">
+                    <MenuFlyoutItem x:Uid="ShellMenuItem_Views_About" />
+                    <MenuFlyoutItem x:Uid="ShellMenuItem_Views_Help" />
                 </winui:MenuBarItem>
             </winui:MenuBar>
             <Grid Grid.Row="1">

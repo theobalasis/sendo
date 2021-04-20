@@ -46,7 +46,7 @@ namespace sendo
 
         private ActivationService CreateActivationService()
         {
-            return new ActivationService(this, typeof(Views.MainPage), new Lazy<UIElement>(CreateShell));
+            return new ActivationService(this, typeof(Views.Login), new Lazy<UIElement>(CreateShell));
         }
 
         private UIElement CreateShell()

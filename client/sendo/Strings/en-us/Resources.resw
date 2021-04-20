@@ -205,4 +205,16 @@
     <value>Campaign</value>
     <comment>View for Campain editing.</comment>
   </data>
+  <data name="ShellMenuBarItem_Info.Title" xml:space="preserve">
+    <value>Info</value>
+    <comment>View for Information</comment>
+  </data>
+  <data name="ShellMenuItem_Views_About.Text" xml:space="preserve">
+    <value>About</value>
+    <comment>Menu item text about</comment>
+  </data>
+  <data name="ShellMenuItem_Views_Help.Text" xml:space="preserve">
+    <value>Help</value>
+    <comment>Menu item text for Help</comment>
+  </data>
 </root>

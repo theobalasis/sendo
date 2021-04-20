@@ -149,6 +149,9 @@
     <Compile Include="Views\Campaign.xaml.cs">
       <DependentUpon>Campaign.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Signup.xaml.cs">
+      <DependentUpon>Signup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -198,6 +201,10 @@
     <Page Include="Views\Campaign.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Signup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Login.xaml">
       <Generator>MSBuild:Compile</Generator>
