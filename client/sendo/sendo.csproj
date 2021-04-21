@@ -152,8 +152,9 @@
     <Compile Include="Views\Signup.xaml.cs">
       <DependentUpon>Signup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Login.xaml.cs">
+    <Compile Include="..\..\..\..\..\Desktop\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
+      <Link>Views\Login.xaml.cs</Link>
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -206,9 +207,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Login.xaml">
+    <Page Include="..\..\..\..\..\Desktop\Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Link>Views\Login.xaml</Link>
     </Page>
     <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
