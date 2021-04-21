@@ -149,6 +149,7 @@
     <Compile Include="Views\Campaign.xaml.cs">
       <DependentUpon>Campaign.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\main.xaml.cs" />
     <Compile Include="Views\Signup.xaml.cs">
       <DependentUpon>Signup.xaml</DependentUpon>
     </Compile>
