@@ -48,7 +48,7 @@
                 </StackPanel>
             </SplitView.Pane>
             <Border BorderThickness="1" BorderBrush="Black" Margin="340,195,85,114" FocusVisualPrimaryBrush="Black" Background="#FFDEDEDE">
-                <ToggleSwitch Header="Gamer Mode(Dark Mode)" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="34,94,584,544" FontSize="24"/>
+                <ToggleSwitch Header="Dark Mode" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="34,94,584,544" FontSize="24"/>
             </Border>
         </SplitView>
         <DatePicker Margin="465,397,0,0" Grid.Row="1" VerticalAlignment="Top"/>
