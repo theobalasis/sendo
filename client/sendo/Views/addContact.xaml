@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="sendo.Views.addContact"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:sendo.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1440" Height="1024">
+
+    <Grid>
+        <Border BorderThickness="1" BorderBrush="Black" Margin="100,0,0,0" Background="Black" Height="125" VerticalAlignment="Top"/>
+        <SplitView x:Name="MenuTestSplit" DisplayMode="CompactOverlay" IsPaneOpen="False" CompactPaneLength="100" OpenPaneLength="400" Margin="0,0,10,0" FontSize="36">
+            <SplitView.Pane>
+                <StackPanel Background="gray">
+                    <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE700;" Background="Transparent" Click="Button_Click" />
+                    <StackPanel Orientation="Horizontal">
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE9CE;" Background="Transparent" />
+                        <TextBlock Text="Help" FontSize="36" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE946;" Background="Transparent" />
+                        <TextBlock Text="About" FontSize="36" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xEDB3;" Background="Transparent" />
+                        <TextBlock Text="Mail Templates" FontSize="36" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE902;" Background="Transparent" />
+                        <TextBlock Text="Contact Groups" FontSize="36" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE713;" Background="Transparent" />
+                        <TextBlock Text="Settings" FontSize="36" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+            </SplitView.Pane>
+        </SplitView>
+        <TextBlock Text="SENDO" TextWrapping="Wrap" Margin="1229,35,35,935" FontFamily="Arial" FontSize="48" FocusVisualPrimaryBrush="Black" Foreground="Red"/>
+        <Button  FontSize="36" Height="90" Width="550" Content="Add Contact" Background="#FFC4C4C4" Margin="0,875,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" FocusVisualPrimaryBrush="Black" FontFamily="Arial" CornerRadius="42,42,42,42"/>
+        <TextBlock HorizontalAlignment="Center" Height="57" Text="New Contact" TextWrapping="Wrap" VerticalAlignment="Top" Width="364" Margin="0,160,0,0" FontSize="48" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Center" Height="112" Text="Please enter the name and email of the contact" TextWrapping="Wrap" VerticalAlignment="Top" Width="544" Margin="0,226,0,0" FontSize="36" TextAlignment="Center"/>
+        <TextBox HorizontalAlignment="Center" Height="36" Text="middle name" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Margin="0,364,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="36" Text="Contact name" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Margin="370,364,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="36" Text="Last name" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Margin="930,364,0,0"/>
+        <TextBox HorizontalAlignment="Center" Height="36" Text="email" TextWrapping="Wrap" VerticalAlignment="Top" Width="440" Margin="0,430,0,0"/>
+        <ComboBox Width="300" HorizontalAlignment="Center" Margin="0,538,0,0"/>
+
+    </Grid>
+</Page>
