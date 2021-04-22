@@ -20,20 +20,11 @@ namespace sendo.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class BlankPage4 : Page
+    public sealed partial class BlankPage5 : Page
     {
-        public BlankPage4()
+        public BlankPage5()
         {
             this.InitializeComponent();
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if(MenuTestSplit.IsPaneOpen == false){
-                MenuTestSplit.IsPaneOpen = true;
-            }
-            else{
-                MenuTestSplit.IsPaneOpen = false;
-            }
         }
     }
 }

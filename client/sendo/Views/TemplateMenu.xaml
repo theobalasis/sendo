@@ -23,11 +23,11 @@
                         <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE9CE;" Background="Transparent" />
                         <TextBlock Text="Help" FontSize="36" VerticalAlignment="Center"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Background="#FF545454">
+                    <StackPanel Orientation="Horizontal">
                         <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE946;" Background="Transparent" />
                         <TextBlock Text="About" FontSize="36" VerticalAlignment="Center"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Background="#FF545454">
                         <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xEDB3;" Background="Transparent" />
                         <TextBlock Text="Mail Templates" FontSize="36" VerticalAlignment="Center"/>
                     </StackPanel>
