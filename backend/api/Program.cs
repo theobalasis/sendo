@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace Sendo.API
+namespace Sendo.Api
 {
     public class Program
     {

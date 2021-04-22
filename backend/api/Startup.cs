@@ -4,20 +4,43 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Sendo.Api.Config;
+using Sendo.Api.DataAccess;
+using Microsoft.EntityFrameworkCore;
 
-namespace Sendo.API
+namespace Sendo.Api
 {
     public class Startup
     {
+        private IWebHostEnvironment? Environment { get; set; }
+
+        public IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
-
         public void ConfigureServices(IServiceCollection services)
         {
+            ISettings settings;
+            if (Environment == null || Environment.IsDevelopment())
+            {
+                services.AddSingleton<ISettings, DevSettings>();
+                settings = new DevSettings();
+            }
+            else
+            {
+                services.AddSingleton<ISettings, ProductionSettings>();
+                settings = new ProductionSettings();
+            }
+
+            services.AddDbContext<UserDataContext>(
+                opt => opt.UseNpgsql(
+                    settings.DataDbConnectionString,
+                    action => action.MigrationsHistoryTable("migrations_history", "management")
+                )
+            );
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -28,18 +51,20 @@ namespace Sendo.API
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            Environment = env;
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sendo API v1"));
             }
-
-            app.UseHttpsRedirection();
+            else
+            {
+                app.UseHttpsRedirection();
+            }
 
             app.UseRouting();
-
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
