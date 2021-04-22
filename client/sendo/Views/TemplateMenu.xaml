@@ -58,6 +58,7 @@
 
         <TextBlock Text="SENDO" TextWrapping="Wrap" Margin="1225,40,35,902" FontFamily="Arial" FontSize="48" FocusVisualPrimaryBrush="Black" Foreground="Red"/>
         <TextBlock Text="Templates" TextWrapping="Wrap" Margin="560,140,560,834" FontSize="36" TextAlignment="Center" FontFamily="Arial"/>
+        <Button FontFamily="Segoe MDL2 Assets" FontSize="72" Height="90" Width="90" Content="&#xECCD;" Background="Transparent" Margin="1300,895,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>
