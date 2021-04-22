@@ -22,7 +22,7 @@
                         <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE9CE;" Background="Transparent" />
                         <TextBlock Text="Help" FontSize="36" VerticalAlignment="Center"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Background="#FF545454">
+                    <StackPanel Orientation="Horizontal">
                         <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE946;" Background="Transparent" />
                         <TextBlock Text="About" FontSize="36" VerticalAlignment="Center"/>
                     </StackPanel>
@@ -30,7 +30,7 @@
                         <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xEDB3;" Background="Transparent" />
                         <TextBlock Text="Mail Templates" FontSize="36" VerticalAlignment="Center"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Background="#FF545454">
                         <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE902;" Background="Transparent" />
                         <TextBlock Text="Contact Groups" FontSize="36" VerticalAlignment="Center"/>
                     </StackPanel>
@@ -50,13 +50,13 @@
                             </MenuFlyout>
                         </Button.Flyout>
                     </Button>
-                    <TextBlock Text="Template name" TextWrapping="Wrap" Margin="3,28,830,27" FontSize="36" TextAlignment="Left" FontFamily="Arial" RenderTransformOrigin="0.502,0.443"/>
+                    <TextBlock Text="Group name" TextWrapping="Wrap" Margin="3,28,830,27" FontSize="36" TextAlignment="Left" FontFamily="Arial" RenderTransformOrigin="0.502,0.443"/>
                 </Grid>
             </Border>
         </SplitView>
 
         <TextBlock Text="SENDO" TextWrapping="Wrap" Margin="1225,40,35,902" FontFamily="Arial" FontSize="48" FocusVisualPrimaryBrush="Black" Foreground="Red"/>
-        <TextBlock Text="Templates" TextWrapping="Wrap" Margin="560,140,560,834" FontSize="36" TextAlignment="Center" FontFamily="Arial"/>
+        <TextBlock Text="Contact Groups" TextWrapping="Wrap" Margin="560,140,560,834" FontSize="36" TextAlignment="Center" FontFamily="Arial"/>
 
     </Grid>
 </Page>
