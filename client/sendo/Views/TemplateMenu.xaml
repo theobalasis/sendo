@@ -6,9 +6,58 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1440" Height="1024">
 
     <Grid>
+
+        <Border BorderThickness="1" BorderBrush="Black" Margin="100,0,0,0" Background="Black" Height="125" VerticalAlignment="Top"/>
+        <SplitView x:Name="MenuTestSplit" DisplayMode="CompactOverlay" IsPaneOpen="False" CompactPaneLength="100" OpenPaneLength="400" Width="1440" Height="1024" Grid.RowSpan="2">
+            <SplitView.Pane>
+                <StackPanel Background="gray">
+                    <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE700;" Background="Transparent" Click="Button_Click" />
+                    <StackPanel Orientation="Horizontal">
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE845;" Background="Transparent" />
+                        <TextBlock Text="Back" FontSize="36" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE9CE;" Background="Transparent" />
+                        <TextBlock Text="Help" FontSize="36" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Background="#FF545454">
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE946;" Background="Transparent" />
+                        <TextBlock Text="About" FontSize="36" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xEDB3;" Background="Transparent" />
+                        <TextBlock Text="Mail Templates" FontSize="36" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE902;" Background="Transparent" />
+                        <TextBlock Text="Contact Groups" FontSize="36" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE713;" Background="Transparent" />
+                        <TextBlock Text="Settings" FontSize="36" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+            </SplitView.Pane>
+            <Border BorderThickness="1" BorderBrush="Black" Margin="0,195,0,719" FocusVisualPrimaryBrush="Black" Background="#FFDEDEDE">
+                <Grid>
+                    <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Content="&#xE712;" Background="Transparent" Width="80" Height="80" Margin="1230,0,0,0">
+                        <Button.Flyout>
+                            <MenuFlyout>
+                                <MenuFlyoutItem Text="Edit"/>
+                                <MenuFlyoutItem Text="Delete"/>
+                            </MenuFlyout>
+                        </Button.Flyout>
+                    </Button>
+                    <TextBlock Text="Template name" TextWrapping="Wrap" Margin="3,28,830,27" FontSize="36" TextAlignment="Left" FontFamily="Arial" RenderTransformOrigin="0.502,0.443"/>
+                </Grid>
+            </Border>
+        </SplitView>
+
+        <TextBlock Text="SENDO" TextWrapping="Wrap" Margin="1225,40,35,902" FontFamily="Arial" FontSize="48" FocusVisualPrimaryBrush="Black" Foreground="Red"/>
+        <TextBlock Text="Templates" TextWrapping="Wrap" Margin="560,140,560,834" FontSize="36" TextAlignment="Center" FontFamily="Arial"/>
 
     </Grid>
 </Page>
