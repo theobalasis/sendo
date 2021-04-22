@@ -84,6 +84,26 @@ namespace sendo.Views
             OnPropertyChanged(propertyName);
         }
 
+        
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        
+        
+        
+        
+        
+        
+        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (MenuTestSplit.IsPaneOpen == false)
+            {
+                MenuTestSplit.IsPaneOpen = true;
+            }
+            else
+            {
+                MenuTestSplit.IsPaneOpen = false;
+            }
+        }
     }
+
 }
