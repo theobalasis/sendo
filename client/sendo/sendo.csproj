@@ -149,6 +149,18 @@
     <Compile Include="Views\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\addContact.xaml.cs">
+      <DependentUpon>addContact.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdvancedLogin.xaml.cs">
+      <DependentUpon>AdvancedLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\contact.xaml.cs">
+      <DependentUpon>contact.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContactGroups.xaml.cs">
+      <DependentUpon>ContactGroups.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TemplateMenu.xaml.cs">
       <DependentUpon>TemplateMenu.xaml</DependentUpon>
     </Compile>
@@ -211,6 +223,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\About.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\addContact.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AdvancedLogin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\contact.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ContactGroups.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
