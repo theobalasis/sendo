@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 using sendo.Core.Services;
-using sendo.Core.Services;
 
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;

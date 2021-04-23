@@ -38,7 +38,7 @@ namespace sendo.Views
 
         private void ShellMenuItemClick_Views_Main(object sender, RoutedEventArgs e)
         {
-            MenuNavigationHelper.UpdateView(typeof(MainPage));
+            MenuNavigationHelper.UpdateView(typeof(Home));
         }
 
         private void ShellMenuItemClick_Views_TelerikDataGrid(object sender, RoutedEventArgs e)

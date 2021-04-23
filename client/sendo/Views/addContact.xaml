@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="sendo.Views.addContact"
+    x:Class="sendo.Views.AddContact"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:sendo.Views"

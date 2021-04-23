@@ -149,14 +149,14 @@
     <Compile Include="Views\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\addContact.xaml.cs">
-      <DependentUpon>addContact.xaml</DependentUpon>
+    <Compile Include="Views\AddContact.xaml.cs">
+      <DependentUpon>AddContact.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AdvancedLogin.xaml.cs">
       <DependentUpon>AdvancedLogin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\contact.xaml.cs">
-      <DependentUpon>contact.xaml</DependentUpon>
+    <Compile Include="Views\Contact.xaml.cs">
+      <DependentUpon>Contact.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ContactGroups.xaml.cs">
       <DependentUpon>ContactGroups.xaml</DependentUpon>
@@ -164,11 +164,8 @@
     <Compile Include="Views\TemplateMenu.xaml.cs">
       <DependentUpon>TemplateMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\help.xaml.cs">
-      <DependentUpon>help.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\main.xaml.cs">
-      <DependentUpon>main.xaml</DependentUpon>
+    <Compile Include="Views\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Campaign.xaml.cs">
       <DependentUpon>Campaign.xaml</DependentUpon>
@@ -178,9 +175,6 @@
     </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
@@ -226,7 +220,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\addContact.xaml">
+    <Page Include="Views\AddContact.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -234,7 +228,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\contact.xaml">
+    <Page Include="Views\Contact.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -246,11 +240,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\help.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\main.xaml">
+    <Page Include="Views\Home.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -263,10 +253,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Login.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -306,7 +292,6 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".editorconfig" />
     <None Include="App.config" />
     <None Include="sendo_TemporaryKey.pfx" />
   </ItemGroup>
