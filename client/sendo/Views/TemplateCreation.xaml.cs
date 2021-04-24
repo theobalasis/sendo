@@ -11,9 +11,9 @@ using Windows.UI.Xaml.Controls;
 
 namespace sendo.Views
 {
-    public sealed partial class MainPage : Page, INotifyPropertyChanged
+    public sealed partial class Editor : Page, INotifyPropertyChanged
     {
-        public MainPage()
+        public Editor()
         {
             InitializeComponent();
         }
