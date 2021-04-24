@@ -11,6 +11,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Core;
+using System.Linq;
 using System.Collections.Generic;
 using muxc = Microsoft.UI.Xaml.Controls;
 
@@ -43,9 +44,9 @@ namespace sendo.Views
         private readonly List<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
         {
             ("home", typeof(Home)),
-            ("MailTemplates", typeof(TemplateMenu)),
+            ("MailTemplates", typeof(BlankPage4)),
             ("Contact Groups", typeof(ContactGroup)),
-            ("About", typeof(About)),
+            ("About", typeof(BlankPage2)),
         };
 
         private void NavView_Loaded(object sender, RoutedEventArgs e)
