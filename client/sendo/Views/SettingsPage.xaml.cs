@@ -93,17 +93,7 @@ namespace sendo.Views
         
         
         
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (MenuTestSplit.IsPaneOpen == false)
-            {
-                MenuTestSplit.IsPaneOpen = true;
-            }
-            else
-            {
-                MenuTestSplit.IsPaneOpen = false;
-            }
-        }
+        
     }
 
 }

@@ -7,48 +7,96 @@
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     Style="{StaticResource PageStyle}"
     Loaded="OnLoaded"
-    mc:Ignorable="d">
-    
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1440" Height="1024">
 
-    <SplitView
-        x:Name="splitView"
-        PanePlacement="Right"
-        OpenPaneLength="400">
-        <SplitView.Pane>
-            <Frame
-                x:Name="rightFrame"
-                BorderThickness="1,1,0,0"
-                BorderBrush="Gray"
-                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" />
-        </SplitView.Pane>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <winui:MenuBar x:Name="lmenubar" VerticalAlignment="Top" IsEnabled="True">
-                <!--
+    <winui:NavigationView x:Name="NavView"
+                          Loaded="NavView_Loaded"
+                         ItemInvoked="NavView_ItemInvoked"
+                         BackRequested="NavView_BackRequested">
+
+        <winui:NavigationView.MenuItems>
+            <winui:NavigationViewItem Tag="home" Icon="Home" Content="Home"/>
+            <winui:NavigationViewItemSeparator/>
+            <winui:NavigationViewItemHeader x:Name="MainPagesHeader"
+                                           Content="Main pages"/>
+            <winui:NavigationViewItem Tag="MailTemplates" Content="Mail Templates">
+                <winui:NavigationViewItem.Icon>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEDB3;"/>
+                </winui:NavigationViewItem.Icon>
+            </winui:NavigationViewItem>
+            <winui:NavigationViewItem Tag="Contact Groups" Content="Contact Groups">
+                <winui:NavigationViewItem.Icon>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE902;"/>
+                </winui:NavigationViewItem.Icon>
+            </winui:NavigationViewItem>
+            <winui:NavigationViewItem Tag="About" Content="About">
+                <winui:NavigationViewItem.Icon>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE946;"/>
+                </winui:NavigationViewItem.Icon>
+            </winui:NavigationViewItem>
+            <ScrollViewer>
+                <Frame x:Name="ContentFrame" Padding="12,0,12,24" IsTabStop="True"
+                   NavigationFailed="ContentFrame_NavigationFailed"/>
+            </ScrollViewer>
+        </winui:NavigationView.MenuItems>
+    
+        <SplitView
+            x:Name="splitView"
+            PanePlacement="left"
+            OpenPaneLength="400" Margin="-320,0,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="26*" />
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="17*"/>
+                </Grid.RowDefinitions>
+                <winui:MenuBar x:Name="lmenubar" VerticalAlignment="Center" IsEnabled="True">
+                    <!--
                 TODO WTS: You can edit the text for the menu in String/en-US/Resources.resw
                 -->
-                <winui:MenuBarItem x:Uid="ShellMenuBarItem_File">
-                    <MenuFlyoutItem x:Uid="ShellMenuItem_File_Settings" Click="ShellMenuItemClick_File_Settings" />
-                    <MenuFlyoutItem x:Uid="ShellMenuItem_File_Exit" Click="ShellMenuItemClick_File_Exit" />
-                </winui:MenuBarItem>
-                <winui:MenuBarItem x:Uid="ShellMenuBarItem_Views">
-                    <MenuFlyoutItem x:Uid="ShellMenuItem_Views_Main" Click="ShellMenuItemClick_Views_Main" />
-                    <MenuFlyoutItem x:Uid="ShellMenuItem_Views_TelerikDataGrid" Click="ShellMenuItemClick_Views_TelerikDataGrid" />
-                    <MenuFlyoutItem x:Uid="ShellMenuBarItem_Views_Login" Click="ShellMenuItemClick_Views_Login"/>
-                    <MenuFlyoutItem x:Uid="ShellMenuBarItem_Views_Campaing" Click="ShellMenuItemClick_Views_Campaing"/>
-                </winui:MenuBarItem>
-                <winui:MenuBarItem x:Uid="ShellMenuBarItem_Info">
-                    <MenuFlyoutItem x:Uid="ShellMenuItem_Views_About" />
-                    <MenuFlyoutItem x:Uid="ShellMenuItem_Views_Help" />
-                </winui:MenuBarItem>
-            </winui:MenuBar>
-            <Grid Grid.Row="1">
-                <Frame x:Name="shellFrame" />
+                    <winui:MenuBarItem x:Uid="ShellMenuBarItem_File">
+                        <MenuFlyoutItem x:Uid="ShellMenuItem_File_Settings" Click="ShellMenuItemClick_File_Settings" />
+                        <MenuFlyoutItem x:Uid="ShellMenuItem_File_Exit" Click="ShellMenuItemClick_File_Exit" />
+                    </winui:MenuBarItem>
+                    <winui:MenuBarItem x:Uid="ShellMenuBarItem_Views">
+                        <MenuFlyoutItem x:Uid="ShellMenuItem_Views_Main" Click="ShellMenuItemClick_Views_Main" />
+                        <MenuFlyoutItem x:Uid="ShellMenuItem_Views_TelerikDataGrid" Click="ShellMenuItemClick_Views_TelerikDataGrid" />
+                        <MenuFlyoutItem x:Uid="ShellMenuBarItem_Views_Login" Click="ShellMenuItemClick_Views_Login"/>
+                        <MenuFlyoutItem x:Uid="ShellMenuBarItem_Views_Campaing" Click="ShellMenuItemClick_Views_Campaing"/>
+                    </winui:MenuBarItem>
+                    <winui:MenuBarItem x:Uid="ShellMenuBarItem_Info">
+                        <MenuFlyoutItem x:Uid="ShellMenuItem_Views_About" />
+                        <MenuFlyoutItem x:Uid="ShellMenuItem_Views_Help" />
+                    </winui:MenuBarItem>
+                </winui:MenuBar>
+                <Grid Grid.Row="1" Grid.RowSpan="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="235*"/>
+                        <RowDefinition Height="257*"/>
+                    </Grid.RowDefinitions>
+                    <Frame x:Name="shellFrame" Margin="0,-40,0,0" Height="1024" Grid.RowSpan="2" />
+                </Grid>
             </Grid>
-        </Grid>
-    </SplitView>
+        </SplitView>
 
+        </winui:NavigationView>
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState>
+                <VisualState.StateTriggers>
+                    <AdaptiveTrigger
+                        MinWindowWidth="{x:Bind NavViewCompactModeThresholdWidth}"/>
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <!-- Remove the next 3 lines for left-only navigation. -->
+                    <Setter Target="NavView.PaneDisplayMode" Value="Top"/>
+                    <Setter Target="MainPagesHeader.Visibility" Value="Collapsed"/>
+                    <!-- Leave the next line for left-only navigation. -->
+                    <Setter Target="ContentFrame.Padding" Value="24,0,24,24"/>
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
 </Page>
