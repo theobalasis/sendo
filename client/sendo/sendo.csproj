@@ -161,6 +161,9 @@
     <Compile Include="Views\ContactGroups.xaml.cs">
       <DependentUpon>ContactGroups.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TemplateCreation.xaml.cs">
+      <DependentUpon>TemplateCreation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TemplateMenu.xaml.cs">
       <DependentUpon>TemplateMenu.xaml</DependentUpon>
     </Compile>
@@ -233,6 +236,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ContactGroups.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TemplateCreation.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

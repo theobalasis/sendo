@@ -8,14 +8,14 @@
     Style="{StaticResource PageStyle}"
     Loaded="OnLoaded"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1440" Height="1024">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1500" Height="1024">
 
     <Frame x:Name="shellFrame" Margin="0,0,10,4" >
 
         <winui:NavigationView x:Name="NavView"
                           Loaded="NavView_Loaded"
                          ItemInvoked="NavView_ItemInvoked"
-                         BackRequested="NavView_BackRequested" Margin="0,0,0,-4" HorizontalAlignment="Left" Width="1435">
+                         BackRequested="NavView_BackRequested" Margin="0,0,-5,-4" >
 
             <winui:NavigationView.MenuItems>
                 <winui:NavigationViewItem Tag="home" Content="Home">
@@ -48,12 +48,8 @@
                 <AutoSuggestBox x:Name="NavViewSearchBox" QueryIcon="Find"/>
             </winui:NavigationView.AutoSuggestBox>
 
-            <SplitView
-            x:Name="splitView"
-            PanePlacement="left"
-            OpenPaneLength="400" Margin="5,0,0,0" HorizontalAlignment="Left" Width="1110">
-                <Frame x:Name="ContentFrame" Padding="12,0,12,24" IsTabStop="True"
-                   NavigationFailed="ContentFrame_NavigationFailed" Height="1024" Margin="-5,0,-290,0" Width="1440"/>
+            <SplitView x:Name="splitView" PanePlacement="left" OpenPaneLength="400" HorizontalAlignment="Left"  Margin="10,0,0,0" Width="1440"  >
+                <Frame x:Name="ContentFrame" IsTabStop="True" NavigationFailed="ContentFrame_NavigationFailed"/>
             </SplitView>
 
         </winui:NavigationView>
