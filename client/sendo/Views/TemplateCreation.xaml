@@ -9,65 +9,49 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1440" Height="1024">
     <Grid x:Name="ContentArea" Height="1024">
         <Grid.RowDefinitions>
-
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <ListView x:Name="VariableList" RelativePanel.Below="Reloadcol" HorizontalAlignment="Center" Margin="0,10,0,10" SelectionMode="None" IsItemClickEnabled="True" ItemClick="AddVar" IsRightTapEnabled="False" IsHoldingEnabled="False" IsDoubleTapEnabled="False"/>
-        <SplitView x:Name="MenuTestSplit" DisplayMode="CompactOverlay" IsPaneOpen="False" CompactPaneLength="100" OpenPaneLength="400" Margin="0,0,10,0" Grid.ColumnSpan="3">
-            <SplitView.Pane>
-                <StackPanel Background="gray">
-                    <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE700;" Background="Transparent" Click="Button_Click" />
-                    <StackPanel Orientation="Horizontal">
-                        <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE9CE;" Background="Transparent" />
-                        <TextBlock Text="Help" FontSize="36" VerticalAlignment="Center"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE946;" Background="Transparent" />
-                        <TextBlock Text="About" FontSize="36" VerticalAlignment="Center"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xEDB3;" Background="Transparent" />
-                        <TextBlock Text="Mail Templates" FontSize="36" VerticalAlignment="Center"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE902;" Background="Transparent" />
-                        <TextBlock Text="Contact Groups" FontSize="36" VerticalAlignment="Center"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Height="100" Width="100" Content="&#xE713;" Background="Transparent" />
-                        <TextBlock Text="Settings" FontSize="36" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </StackPanel>
-            </SplitView.Pane>
-        </SplitView>
-        <TextBox HorizontalAlignment="Left" Height="45" Text="Template Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="356" Margin="522,230,0,0" BorderBrush="Black" Background="White" Foreground="Black" Visibility="Visible" RequestedTheme="Default" FontSize="24" FocusVisualPrimaryBrush="Black" SelectionHighlightColorWhenNotFocused="Transparent" Grid.Column="2"/>
-        <TextBlock Text="SENDO" TextWrapping="Wrap" Margin="1209,35,35,935" FontFamily="Arial" FontSize="48" FocusVisualPrimaryBrush="Black" Foreground="Red" Grid.Column="2"/>
-        <TextBlock Text="Templates" TextWrapping="Wrap" Grid.Column="2" Margin="620,147,620,811" RenderTransformOrigin="0.5,0.5" FontSize="36" TextAlignment="Center" FontFamily="Arial">
-            <TextBlock.RenderTransform>
-                <CompositeTransform ScaleX="1"/>
-            </TextBlock.RenderTransform>
-        </TextBlock>
-        <AppBarButton x:Name="openFileButton" Icon="OpenFile"
-                            Click="OpenButton_Click" ToolTipService.ToolTip="Open file" Grid.Column="2" Margin="1286,336,0,0" RenderTransformOrigin="0.515,0.446" Height="58"/>
-        <AppBarButton x:Name="saveFileButton" Icon="Save" Click="SaveButton_Click"
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="1"
+            x:Uid="Main_Title"
+            Style="{StaticResource PageTitleStyle}" />
+        <RelativePanel Margin="0,25,0,0" Grid.Column="1" Grid.Row="2" >
+            <AppBarButton x:Name="Reloadcol" Icon="Redo" Click="fetchitems"  />
+            <ListView x:Name="VariableList" RelativePanel.Below="Reloadcol" HorizontalAlignment="Left" Margin="10,10,0,10" SelectionMode="None" IsItemClickEnabled="True" ItemClick="AddVar" IsRightTapEnabled="False" IsHoldingEnabled="False" IsDoubleTapEnabled="False">
+            </ListView>
+        </RelativePanel>
+        <RelativePanel Margin="0,25,95,0" Grid.Column="2" Grid.Row="2" >
+            <RelativePanel.Resources>
+                <Style TargetType="AppBarButton">
+                    <Setter Property="IsCompact" Value="True"/>
+                </Style>
+            </RelativePanel.Resources>
+            <AppBarButton x:Name="openFileButton" Icon="OpenFile"
+                            Click="OpenButton_Click" ToolTipService.ToolTip="Open file"/>
+            <AppBarButton x:Name="saveFileButton" Icon="Save" Click="SaveButton_Click"
                             ToolTipService.ToolTip="Save file"
-                            RelativePanel.RightOf="openFileButton" Margin="511,335,0,0" Grid.Column="2" Height="58"/>
-        <AppBarButton Icon="Save" Click="SaveComp_Click"
+                            RelativePanel.RightOf="openFileButton" Margin="8,0,0,0"/>
+            <AppBarButton Icon="Save" Click="SaveComp_Click"
                             ToolTipService.ToolTip="Save complete file"
-                            RelativePanel.RightOf="saveFileButton" Margin="587,335,0,0" Background="#FFCDCDCD" Grid.Column="2" Height="58"/>
-        <AppBarButton Icon="Bold" Click="BoldButton_Click" ToolTipService.ToolTip="Bold"
-                            RelativePanel.LeftOf="italicButton" Margin="723,335,0,0" Grid.Column="2" Height="58"/>
-        <AppBarButton x:Name="italicButton" Icon="Italic" Click="ItalicButton_Click"
-                            ToolTipService.ToolTip="Italic" RelativePanel.LeftOf="underlineButton" Margin="799,335,0,0" Grid.Column="2" Height="58"/>
-        <AppBarButton x:Name="underlineButton" Icon="Underline" Click="UnderlineButton_Click"
-                            ToolTipService.ToolTip="Underline" RelativePanel.AlignRightWithPanel="True" Grid.Column="2" Margin="875,335,0,0" Height="58"/>
-        <RichEditBox x:Name="editor" RelativePanel.Below="openFileButton" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignBottomWithPanel="True" LostFocus="EditorLostFocus" Margin="430,395,89,74" Grid.Column="2"/>
-        <AppBarButton x:Name="Reloadcol" Icon="Redo" Click="fetchitems" Grid.Column="2" Margin="435,335,0,0" Height="58"  />
-        <Border BorderThickness="1" BorderBrush="Black" Margin="80,0,0,0" Background="Black" Height="130" VerticalAlignment="Top" Grid.Column="2"/>
+                            RelativePanel.RightOf="saveFileButton" Margin="8,0,0,0" Background="#FFCDCDCD"/>
+
+            <AppBarButton Icon="Bold" Click="BoldButton_Click" ToolTipService.ToolTip="Bold"
+                            RelativePanel.LeftOf="italicButton" Margin="0,0,8,0"/>
+            <AppBarButton x:Name="italicButton" Icon="Italic" Click="ItalicButton_Click"
+                            ToolTipService.ToolTip="Italic" RelativePanel.LeftOf="underlineButton" Margin="0,0,8,0"/>
+            <AppBarButton x:Name="underlineButton" Icon="Underline" Click="UnderlineButton_Click"
+                            ToolTipService.ToolTip="Underline" RelativePanel.AlignRightWithPanel="True"/>
+
+            <RichEditBox x:Name="editor" RelativePanel.Below="openFileButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignBottomWithPanel="True" LostFocus="EditorLostFocus"/>
+        </RelativePanel>
 
     </Grid>
 </Page>
