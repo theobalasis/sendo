@@ -8,7 +8,7 @@
     Style="{StaticResource PageStyle}"
     Loaded="OnLoaded"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1500" Height="1024">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1440" Height="1024">
 
     <Frame x:Name="shellFrame" Margin="0,0,10,4" >
 
@@ -41,7 +41,6 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE946;"/>
                     </winui:NavigationViewItem.Icon>
                 </winui:NavigationViewItem>
-                <ScrollViewer/>
             </winui:NavigationView.MenuItems>
             <winui:NavigationView.AutoSuggestBox>
 
