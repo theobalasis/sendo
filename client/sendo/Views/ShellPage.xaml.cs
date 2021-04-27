@@ -47,6 +47,7 @@ namespace sendo.Views
             ("MailTemplates", typeof(BlankPage4)),
             ("Contact Groups", typeof(ContactGroup)),
             ("About", typeof(About)),
+            ("Template Creation", typeof(Editor)),
         };
 
         private void NavView_Loaded(object sender, RoutedEventArgs e)
