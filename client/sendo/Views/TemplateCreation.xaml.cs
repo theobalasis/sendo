@@ -1,4 +1,5 @@
-﻿using sendo.Core.Services;
+﻿using Newtonsoft.Json.Linq;
+using sendo.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -150,11 +151,11 @@ namespace sendo.Views
         private async void fetchitems(object sender, RoutedEventArgs e)
         {
             VariableList.Items.Clear();
-            VariableList.Items.Add("a");
-            var data = await SampleDataService.GetGridDataAsync();
-            foreach (var item in data)
+            var raw = await HttpDataService.Main();
+            JObject json = JObject.Parse(raw);
+            foreach (var pair in json)
             {
-                VariableList.Items.Add(item);
+                VariableList.Items.Add(pair.Key);
             }
         }
 
@@ -168,8 +169,9 @@ namespace sendo.Views
             var patern = "<.+>";
             String editortext = string.Empty;
             editor.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out editortext);
-            var data = await SampleDataService.GetGridDataAsync();
-            var comp = varsplit(editortext , patern, data);
+            var raw = await HttpDataService.Main();
+            JObject json = JObject.Parse(raw);
+            var comp = varsplit(editortext , patern, json);
             Windows.Storage.Pickers.FileSavePicker savePicker = new Windows.Storage.Pickers.FileSavePicker();
             savePicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
 
@@ -195,18 +197,18 @@ namespace sendo.Views
                 }
             }
         }
-        private String varsplit(String crude,string replacer, IEnumerable<SampleOrder> data ) {
+        private String varsplit(String crude,string replacer, JObject data ) {
             
             string comp = String.Empty;
             string oldvalue = String.Empty;
             string newvalue = String.Empty;
-            foreach (var item in data)
+            foreach (var pair in data)
             {
-                oldvalue = "<" + item + ">";
-                newvalue = "" + item + "";
-                Debug.WriteLine(oldvalue);
-                Debug.WriteLine(newvalue);
-                comp = crude.Replace( oldvalue , newvalue);
+                oldvalue = "<" + pair.Key + ">";
+                newvalue = "" + pair.Value + "";
+                //Debug.WriteLine(oldvalue);
+                //Debug.WriteLine(newvalue);
+                comp = crude.Replace(oldvalue, newvalue);
                 crude = comp;
             }
                 return comp;

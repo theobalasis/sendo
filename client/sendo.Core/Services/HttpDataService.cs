@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-
 using Newtonsoft.Json;
 
 namespace sendo.Core.Services
@@ -134,6 +134,15 @@ namespace sendo.Core.Services
             }
 
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        }
+        public static async Task<string> Main()
+        {
+            HttpClient client = new HttpClient
+            {
+                BaseAddress = new Uri("https://jsonplaceholder.typicode.com")
+            };
+            var a = await client.GetStringAsync("users/1");
+            return a;
         }
     }
 }
