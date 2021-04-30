@@ -46,6 +46,11 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE8A5;"/>
                     </winui:NavigationViewItem.Icon>
                 </winui:NavigationViewItem>
+                <winui:NavigationViewItem Tag="Add Contract" Content="Add Contract">
+                    <winui:NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE82E;"/>
+                    </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
             </winui:NavigationView.MenuItems>
             <winui:NavigationView.AutoSuggestBox>
 

@@ -48,6 +48,7 @@ namespace sendo.Views
             ("Contact Groups", typeof(ContactGroup)),
             ("About", typeof(About)),
             ("Template Creation", typeof(Editor)),
+            ("Add Contract", typeof(AddContact))
         };
 
         private void NavView_Loaded(object sender, RoutedEventArgs e)
