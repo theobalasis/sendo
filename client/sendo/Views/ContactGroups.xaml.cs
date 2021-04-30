@@ -27,6 +27,16 @@ namespace sendo.Views
             this.InitializeComponent();
         }
 
-       
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            List<Contacts> listOfContacts = new List<Contacts>();
+            listOfContacts.Add(new Contacts ("Akis","Manios" ,"Sendo"));
+            listOfContacts.Add(new Contacts("Christy", "Lucyna", "Apple"));
+            listOfContacts.Add(new Contacts("Irena", "Ayyub", "Microsoft"));
+            Contactgroups.ItemsSource = listOfContacts;
+        }
+
     }
+
+
 }

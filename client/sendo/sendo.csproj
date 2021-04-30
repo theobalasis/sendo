@@ -170,6 +170,7 @@
     <Compile Include="Views\ContactGroups.xaml.cs">
       <DependentUpon>ContactGroups.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Contacts.cs" />
     <Compile Include="Views\TemplateCreation.xaml.cs">
       <DependentUpon>TemplateCreation.xaml</DependentUpon>
     </Compile>
