@@ -7,21 +7,73 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Style="{StaticResource PageStyle}"
     xmlns:xaml="using:Windows.UI.Xaml"
-    mc:Ignorable="d" Width="1440" Height="1024">
+    mc:Ignorable="d">
     <Page.Resources>
         <helper:EnumToBooleanConverter x:Key="EnumToBooleanConverter" EnumType="ElementTheme" />
     </Page.Resources>
-    <Grid Height="1024" VerticalAlignment="Top" Width="1440">
+    <Grid Margin="{StaticResource MediumLeftRightMargin}">
         <Grid.RowDefinitions>
             <RowDefinition Height="48" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Border BorderThickness="1" BorderBrush="Black" Margin="340,147,185,114" FocusVisualPrimaryBrush="Black" Background="#FFDEDEDE" Grid.Row="1">
-            <ToggleSwitch Header="Dark Mode" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="34,94,584,544" FontSize="24"/>
-        </Border>
-        <DatePicker Margin="465,397,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <TextBlock Text="Date" TextWrapping="Wrap" Margin="470,360,726,588" Grid.Row="1" FontSize="24"/>
-        <TextBlock Text="Settings" TextWrapping="Wrap" Margin="761,162,445,767" FontSize="36" TextAlignment="Center" FontFamily="Arial" RenderTransformOrigin="0.504,0.662" Grid.Row="1"/>
-        <Button x:Name="Save" Content="Save" Height="85" Margin="795,872,0,0" Width="165" Grid.Row="1" VerticalAlignment="Top" Background="#FF9281FF" FontSize="24" Foreground="White" RenderTransformOrigin="0.5,0.5" BackgroundSizing="OuterBorderEdge" CornerRadius="42,42,42,42"/>
+
+        <TextBlock
+            Grid.Row="0"
+            x:Uid="Settings_Title"
+            Style="{StaticResource PageTitleStyle}" />
+
+        <StackPanel
+            Grid.Row="1"
+            x:Name="ContentArea">
+            <TextBlock x:Uid="Settings_Personalization" Style="{ThemeResource SubtitleTextBlockStyle}" />
+            <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
+                <TextBlock x:Uid="Settings_Theme" />
+
+                <StackPanel Margin="{StaticResource XSmallTopMargin}">
+                    <RadioButton 
+                        x:Uid="Settings_Theme_Light"
+                        Checked="ThemeChanged_CheckedAsync" 
+                        IsChecked="{x:Bind ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=OneWay}"
+                        FontSize="15"
+                        GroupName="AppTheme" >
+                        <RadioButton.CommandParameter>
+                            <xaml:ElementTheme>Light</xaml:ElementTheme>
+                        </RadioButton.CommandParameter>
+                    </RadioButton>
+                    <RadioButton 
+                        x:Uid="Settings_Theme_Dark"
+                        Checked="ThemeChanged_CheckedAsync" 
+                        IsChecked="{x:Bind ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=OneWay}"
+                        FontSize="15"
+                        GroupName="AppTheme">
+                        <RadioButton.CommandParameter>
+                            <xaml:ElementTheme>Dark</xaml:ElementTheme>
+                        </RadioButton.CommandParameter>
+                    </RadioButton>
+                    <RadioButton 
+                        x:Uid="Settings_Theme_Default"
+                        Checked="ThemeChanged_CheckedAsync"
+                        IsChecked="{x:Bind ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Default, Mode=OneWay}"
+                        FontSize="15"
+                        GroupName="AppTheme">
+                        <RadioButton.CommandParameter>
+                            <xaml:ElementTheme>Default</xaml:ElementTheme>
+                        </RadioButton.CommandParameter>
+                    </RadioButton>
+                </StackPanel>
+            </StackPanel>
+
+            <TextBlock x:Uid="Settings_About" Style="{ThemeResource SubtitleTextBlockStyle}" />
+
+            <StackPanel Margin="{StaticResource XSmallTopMargin}">
+                <TextBlock Style="{ThemeResource BodyTextBlockStyle}" Text="{x:Bind VersionDescription, Mode=OneWay}" />
+                <TextBlock
+                    x:Uid="Settings_AboutDescription"
+                    Margin="{StaticResource XSmallTopMargin}"
+                    Style="{ThemeResource BodyTextBlockStyle}" />
+
+                <HyperlinkButton x:Uid="Settings_PrivacyTermsLink" Margin="{StaticResource XSmallTopMargin}" />
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

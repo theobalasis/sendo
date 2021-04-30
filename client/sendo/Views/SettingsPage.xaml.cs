@@ -73,7 +73,7 @@ namespace sendo.Views
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void Set<T>(ref T storage, T value, [CallerMemberName]string propertyName = null)
+        private void Set<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
         {
             if (Equals(storage, value))
             {
@@ -84,16 +84,6 @@ namespace sendo.Views
             OnPropertyChanged(propertyName);
         }
 
-        
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        
-        
-        
-        
-        
-        
-        
-        
     }
-
 }
