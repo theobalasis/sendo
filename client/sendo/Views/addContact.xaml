@@ -9,18 +9,18 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1440" Height="1024">
 
     <Grid>
-        <Button  FontSize="36" Height="90" Width="550" Content="Add Contact" Background="#FFC4C4C4" Margin="0,875,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" FocusVisualPrimaryBrush="Black" FontFamily="Arial" CornerRadius="42,42,42,42"/>
+        <Button x:Name="AddContractB"  FontSize="36" Height="90" Width="550" Content="Add Contact" Background="#FFC4C4C4" Margin="0,875,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" FocusVisualPrimaryBrush="Black" FontFamily="Arial" CornerRadius="42,42,42,42" Click="add"/>
         <TextBlock HorizontalAlignment="Center" Height="57" Text="New Contact" TextWrapping="Wrap" VerticalAlignment="Top" Width="364" Margin="0,160,0,0" FontSize="48" TextAlignment="Center"/>
         <TextBlock HorizontalAlignment="Center" Height="112" Text="Please enter the name and email of the contact" TextWrapping="Wrap" VerticalAlignment="Top" Width="544" Margin="0,226,0,0" FontSize="36" TextAlignment="Center"/>
-        <TextBox HorizontalAlignment="Center" Height="36" Text="middle name" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Margin="0,364,0,0"/>
-        <TextBox HorizontalAlignment="Left" Height="36" Text="Contact name" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Margin="400,364,0,0"/>
-        <TextBox HorizontalAlignment="Left" Height="36" Text="Last name" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Margin="900,364,0,0"/>
-        <TextBox HorizontalAlignment="Center" Height="36" Text="email" TextWrapping="Wrap" VerticalAlignment="Top" Width="440" Margin="0,430,0,0"/>
-        <ComboBox Width="300" Margin="0,493,0,0" HorizontalAlignment="Center">
+        <TextBox x:Name="Mname" HorizontalAlignment="Center" Height="36" Text="middle name" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Margin="0,364,0,0"/>
+        <TextBox x:Name="Fname" HorizontalAlignment="Left" Height="36" Text="Contact name" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Margin="400,364,0,0"/>
+        <TextBox x:Name="Lname" HorizontalAlignment="Left" Height="36" Text="Last name" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Margin="900,364,0,0"/>
+        <TextBox x:Name="EmailT" HorizontalAlignment="Center" Height="36" Text="email" TextWrapping="Wrap" VerticalAlignment="Top" Width="440" Margin="0,430,0,0"/>
+        <ComboBox x:Name="Gender" Width="300" Margin="0,493,0,0" HorizontalAlignment="Center" >
             <ComboBoxItem Content="Male"/>
             <ComboBoxItem Content="Female"/>
         </ComboBox>
-        <TextBox HorizontalAlignment="Center" Height="36" Text="date of birth" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Margin="0,589,0,0"/>
+        <DatePicker x:Name="Dob" Header="Pick a date" HorizontalAlignment="Center" Height="54"  VerticalAlignment="Top" Width="300" Margin="0,589,0,0"/>
 
     </Grid>
 </Page>
