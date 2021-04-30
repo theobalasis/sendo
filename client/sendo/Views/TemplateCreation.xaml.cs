@@ -91,8 +91,7 @@ namespace sendo.Views
                 // finish making changes and call CompleteUpdatesAsync.
                 Windows.Storage.CachedFileManager.DeferUpdates(file);
                 // write to file
-                Windows.Storage.Streams.IRandomAccessStream randAccStream =
-                    await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
+                Windows.Storage.Streams.IRandomAccessStream randAccStream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
 
                 editor.Document.SaveToStream(Windows.UI.Text.TextGetOptions.FormatRtf, randAccStream);
 
@@ -101,8 +100,7 @@ namespace sendo.Views
                 Windows.Storage.Provider.FileUpdateStatus status = await Windows.Storage.CachedFileManager.CompleteUpdatesAsync(file);
                 if (status != Windows.Storage.Provider.FileUpdateStatus.Complete)
                 {
-                    Windows.UI.Popups.MessageDialog errorBox =
-                        new Windows.UI.Popups.MessageDialog("File " + file.Name + " couldn't be saved.");
+                    Windows.UI.Popups.MessageDialog errorBox = new Windows.UI.Popups.MessageDialog("File " + file.Name + " couldn't be saved.");
                     await errorBox.ShowAsync();
                 }
             }
