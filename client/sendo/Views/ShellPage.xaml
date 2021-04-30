@@ -51,6 +51,11 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE82E;"/>
                     </winui:NavigationViewItem.Icon>
                 </winui:NavigationViewItem>
+                <winui:NavigationViewItem Tag="Campaign" Content="Campaign">
+                    <winui:NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE762;"/>
+                    </winui:NavigationViewItem.Icon>
+                </winui:NavigationViewItem>
             </winui:NavigationView.MenuItems>
             <winui:NavigationView.AutoSuggestBox>
 
