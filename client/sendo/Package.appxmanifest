@@ -8,7 +8,7 @@
   IgnorableNamespaces="uap mp genTemplate">
 
   <Identity
-    Name="683EE347-9335-4525-A31A-2874F34CC2E5"
+    Name="sendo"
     Publisher="CN=Akman"
     Version="1.0.0.0" />
 
