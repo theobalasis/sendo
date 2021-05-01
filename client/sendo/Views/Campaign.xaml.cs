@@ -51,5 +51,10 @@ namespace sendo.Views
                 filebutton.Content = "Choose File";
             }
         }
+
+        private void StartB_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
