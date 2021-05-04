@@ -14,6 +14,8 @@ using Windows.UI.Core;
 using System.Linq;
 using System.Collections.Generic;
 using muxc = Microsoft.UI.Xaml.Controls;
+using Windows.UI.ViewManagement;
+using Windows.Foundation;
 
 namespace sendo.Views
 {
@@ -30,7 +32,9 @@ namespace sendo.Views
         {
             InitializeComponent();
             NavigationService.Frame = shellFrame;
-            
+            ApplicationView.PreferredLaunchViewSize = new Size(1650,1024);
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+            ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(1440, 1024));
         }
 
 

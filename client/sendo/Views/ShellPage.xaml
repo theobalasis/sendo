@@ -5,17 +5,19 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    xmlns:views="using:sendo.Views"
     Style="{StaticResource PageStyle}"
     Loaded="OnLoaded"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1440" Height="1024">
+    
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" MinHeight="1024" MinWidth="1440" Width="1660" Height="1025" HorizontalAlignment="Stretch">
 
-    <Frame x:Name="shellFrame" Margin="0,0,10,4" >
+    <Frame x:Name="shellFrame" Margin="0,0,10,4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
 
         <winui:NavigationView x:Name="NavView"
                           Loaded="NavView_Loaded"
                          ItemInvoked="NavView_ItemInvoked"
-                         BackRequested="NavView_BackRequested" Margin="0,0,-5,-4" >
+                         BackRequested="NavView_BackRequested" Height="1025" >
 
             <winui:NavigationView.MenuItems>
                 <winui:NavigationViewItem Tag="home" Content="Home">
@@ -61,10 +63,9 @@
 
                 <AutoSuggestBox x:Name="NavViewSearchBox" QueryIcon="Find"/>
             </winui:NavigationView.AutoSuggestBox>
-
-            <SplitView x:Name="splitView" PanePlacement="left" OpenPaneLength="400" HorizontalAlignment="Left"  Margin="10,0,0,0" Width="1440"  >
-                <Frame x:Name="ContentFrame" IsTabStop="True" NavigationFailed="ContentFrame_NavigationFailed"/>
-            </SplitView>
+            <Grid HorizontalAlignment="Left" Width="1440" Margin="-110,0,0,0" >
+                <Frame x:Name="ContentFrame" IsTabStop="True" NavigationFailed="ContentFrame_NavigationFailed"  Height="1025" />
+            </Grid>
 
         </winui:NavigationView>
     </Frame>
@@ -72,8 +73,7 @@
         <VisualStateGroup>
             <VisualState>
                 <VisualState.StateTriggers>
-                    <AdaptiveTrigger
-                        MinWindowWidth="{x:Bind NavViewCompactModeThresholdWidth}"/>
+                    <AdaptiveTrigger MinWindowHeight="1024" MinWindowWidth="1440"/>
                 </VisualState.StateTriggers>
                 <VisualState.Setters>
                     <!-- Remove the next 3 lines for left-only navigation. -->

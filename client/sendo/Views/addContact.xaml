@@ -4,23 +4,36 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:sendo.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:x1="using:System"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1440" Height="1024">
 
     <Grid>
-        <Button x:Name="AddContractB"  FontSize="36" Height="90" Width="550" Content="Add Contact" Background="#FFC4C4C4" Margin="0,875,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" FocusVisualPrimaryBrush="Black" FontFamily="Arial" CornerRadius="42,42,42,42" Click="add"/>
-        <TextBlock HorizontalAlignment="Center" Height="57" Text="New Contact" TextWrapping="Wrap" VerticalAlignment="Top" Width="364" Margin="0,160,0,0" FontSize="48" TextAlignment="Center"/>
+        <StackPanel Margin="5,122,5,834">
+            <TextBlock Height="66" Text="New Contact" TextWrapping="Wrap" Width="364" FontSize="48" TextAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Margin="0,875,0,59">
+            <Button x:Name="AddContractB"  FontSize="36" Height="90" Width="550" Content="Add Contact" Background="#FFC4C4C4" HorizontalAlignment="Center" FocusVisualPrimaryBrush="Black" FontFamily="Arial" CornerRadius="42,42,42,42" Click="add"/>
+        </StackPanel>
         <TextBlock HorizontalAlignment="Center" Height="112" Text="Please enter the name and email of the contact" TextWrapping="Wrap" VerticalAlignment="Top" Width="544" Margin="0,226,0,0" FontSize="36" TextAlignment="Center"/>
-        <TextBox x:Name="Mname" HorizontalAlignment="Center" Height="36" Text="middle name" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Margin="0,364,0,0"/>
-        <TextBox x:Name="Fname" HorizontalAlignment="Left" Height="36" Text="Contact name" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Margin="400,364,0,0"/>
-        <TextBox x:Name="Lname" HorizontalAlignment="Left" Height="36" Text="Last name" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Margin="900,364,0,0"/>
-        <TextBox x:Name="EmailT" HorizontalAlignment="Center" Height="36" Text="email" TextWrapping="Wrap" VerticalAlignment="Top" Width="440" Margin="0,430,0,0"/>
-        <ComboBox x:Name="Gender" Width="300" Margin="0,493,0,0" HorizontalAlignment="Center" >
-            <ComboBoxItem Content="Male"/>
-            <ComboBoxItem Content="Female"/>
-        </ComboBox>
-        <DatePicker x:Name="Dob" Header="Pick a date" HorizontalAlignment="Center" Height="54"  VerticalAlignment="Top" Width="300" Margin="0,589,0,0"/>
+        <StackPanel Orientation="Horizontal" Margin="0,322,0,612"  Spacing="200" FocusVisualMargin="0,0,0,0">
+            <TextBlock Text="" TextWrapping="Wrap" Width="121"/>
+            <TextBox HorizontalAlignment="Left" x:Name="Fname" Height="36" Text="Contact name" TextWrapping="Wrap" Width="140"/>
+            <TextBox HorizontalAlignment="Center" x:Name="Mname" Height="36" Text="middle name" TextWrapping="Wrap" Width="140"/>
+            <TextBox x:Name="Lname" Height="36" Text="Last name" TextWrapping="Wrap" Width="140"/>
+        </StackPanel>
+        <StackPanel Margin="5,417,-5,531">
+            <TextBox x:Name="EmailT" Height="36" Text="email" TextWrapping="Wrap" Width="440"/>
+        </StackPanel>
+        <StackPanel Margin="5,493,-5,441">
+            <ComboBox HorizontalAlignment="Center" x:Name="Gender" Width="300" >
+                <ComboBoxItem Content="Male"/>
+                <ComboBoxItem Content="Female"/>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Margin="0,583,0,351">
+            <DatePicker HorizontalAlignment="Center" x:Name="Dob" Header="Pick a date" Height="54" Width="300"/>
+        </StackPanel>
 
     </Grid>
 </Page>
