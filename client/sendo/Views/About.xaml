@@ -9,9 +9,12 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="1024" Width="1440">
 
     <Grid>
-        <Border BorderThickness="1" BorderBrush="Black" Margin="340,195,185,114" FocusVisualPrimaryBrush="Black" Background="#FFDEDEDE"/>
-        <TextBlock HorizontalAlignment="Left" Height="535" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="830" Margin="486,273,0,0" FontSize="24" FocusVisualSecondaryBrush="White"/>
-        <TextBlock Text="About" TextWrapping="Wrap" Margin="761,210,445,767" FontSize="36" TextAlignment="Center" FontFamily="Arial" RenderTransformOrigin="0.504,0.662"/>
+        <StackPanel Padding="50" Spacing="30" HorizontalAlignment="Center">
+            <TextBlock Text="About" TextWrapping="Wrap" FontSize="36" TextAlignment="Center" FontFamily="Arial" RenderTransformOrigin="0.504,0.662" Height="47" Width="234"/>
+            <Border Padding="40" BorderThickness="1" BorderBrush="Black" FocusVisualPrimaryBrush="Black" Background="#FFDEDEDE" Height="728" Width="915">
+                <TextBlock Text="TextBlock" TextWrapping="Wrap" FontSize="24" FocusVisualSecondaryBrush="White" Margin="43,0,40,43"/>
+            </Border>
+        </StackPanel>
 
     </Grid>
 </Page>

@@ -9,8 +9,15 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="1440" Height="1024">
 
     <Grid>
-        <TextBlock Text="Group" TextWrapping="Wrap" Margin="560,140,560,834" FontSize="36" TextAlignment="Center" FontFamily="Arial"/>
-        <Button FontFamily="Segoe MDL2 Assets" FontSize="72" Height="90" Width="90" Content="&#xECCD;" Background="Transparent" Margin="1300,895,0,0" VerticalAlignment="Top"/>
+        <StackPanel Padding="50" Spacing="30" HorizontalAlignment="Center">
+            <TextBlock Text="Group" TextWrapping="Wrap" FontSize="36" TextAlignment="Center" FontFamily="Arial" Height="50" Width="320"/>
+
+
+        </StackPanel>
+        <StackPanel Padding="50" Spacing="30" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button FontFamily="Segoe MDL2 Assets" FontSize="72" Height="90" Width="90" Content="&#xECCD;" Background="Transparent"/>
+
+        </StackPanel>
         <Border BorderThickness="1" BorderBrush="Black" Margin="60,195,50,719" FocusVisualPrimaryBrush="Black" Background="#FFDEDEDE">
             <Grid>
                 <Button FontFamily="Segoe MDL2 Assets" FontSize="36" Content="&#xE712;" Background="Transparent" Width="80" Height="80" Margin="1230,0,0,0">

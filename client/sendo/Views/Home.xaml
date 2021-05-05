@@ -18,7 +18,6 @@
                 <ColumnDefinition Width="11*"/>
             </Grid.ColumnDefinitions>
             <TextBox Text="search" TextWrapping="Wrap" Margin="808,45,0,0" BorderBrush="Black" Background="White" Foreground="Black" Visibility="Visible" RequestedTheme="Default" FontSize="24" FocusVisualPrimaryBrush="Black" SelectionHighlightColorWhenNotFocused="Transparent" HorizontalAlignment="Left" Width="355" VerticalAlignment="Top" Height="45"/>
-            <Button FontFamily="Segoe MDL2 Assets" FontSize="72" Content="&#xECCD;" Background="Transparent" MinWidth="90" MinHeight="90" Width="90" Grid.Row="2" Height="90" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,37,0" VerticalAlignment="Top"/>
             <Grid.RowDefinitions>
                 <RowDefinition Height="125*"/>
                 <RowDefinition Height="760*"/>
@@ -27,6 +26,11 @@
 
 
         </Grid>
+        <StackPanel Padding="50" Spacing="30" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button FontFamily="Segoe MDL2 Assets" FontSize="72" Content="&#xECCD;" Background="Transparent" MinWidth="90" MinHeight="90" Width="90" Height="90"/>
+
+
+        </StackPanel>
 
     </Grid>
 </Page>

@@ -28,10 +28,13 @@
             </Grid>
         </Border>-->
         <TextBlock Text="Contact Groups" TextWrapping="Wrap" Margin="560,140,560,834" FontSize="36" TextAlignment="Center" FontFamily="Arial"/>
-        <ListView x:Name="Contactgroups" BorderThickness="1" Margin="10,186,10,134" CanDragItems="True" CanReorderItems="True" AllowDrop="True" SelectionMode="Single" ItemTemplate="{StaticResource ContactListViewTemplate}">
-            
-        </ListView>
-        
-        <Button x:Name="Add" FontFamily="Segoe MDL2 Assets" FontSize="72" Height="90" Width="90" Content="&#xECCD;" Background="Transparent" Margin="1300,895,0,0" VerticalAlignment="Top" Click="Add_Click"/>
+        <StackPanel Padding="50" Spacing="30" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button x:Name="Add" FontFamily="Segoe MDL2 Assets" FontSize="72" Height="90" Width="90" Content="&#xECCD;" Background="Transparent" Click="Add_Click"/>
+
+
+        </StackPanel>
+        <StackPanel Padding="50" Spacing="30" VerticalAlignment="Center" Margin="10,0,10,0" Height="651">
+            <ListView x:Name="Contactgroups" HorizontalAlignment="Center" BorderThickness="1" CanDragItems="True" CanReorderItems="True" AllowDrop="True" SelectionMode="Single" ItemTemplate="{StaticResource ContactListViewTemplate}" Height="553" Width="1420"/>
+        </StackPanel>
     </Grid>
 </Page>
