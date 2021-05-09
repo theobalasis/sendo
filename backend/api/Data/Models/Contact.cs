@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Sendo.Api.Models
+namespace Sendo.Api.Data.Models
 {
     [Table("contact", Schema = "user_data")]
     public class Contact

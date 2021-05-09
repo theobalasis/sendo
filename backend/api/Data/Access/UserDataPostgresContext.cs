@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
-using Sendo.Api.Models;
+using Sendo.Api.Data.Models;
 
 namespace Sendo.Api.DataAccess
 {
-    public class UserDataContext : DbContext
+    public class UserDataPostgresContext : DbContext
     {
         public DbSet<Campaign> Campaigns { get; set; }
 
@@ -19,15 +19,15 @@ namespace Sendo.Api.DataAccess
 
         public DbSet<User> Users { get; set; }
 
-        static UserDataContext() => NpgsqlConnection.GlobalTypeMapper.MapEnum<Gender>("user_data.gender");
+        static UserDataPostgresContext() => NpgsqlConnection.GlobalTypeMapper.MapEnum<Gender>("user_data.gender");
 
-        public UserDataContext(DbContextOptions<UserDataContext> options) : base(options) { }
+        public UserDataPostgresContext(DbContextOptions<UserDataPostgresContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.HasPostgresEnum<Gender>("user_data");
             builder.Entity<ContactGroup>()
-                .HasMany<Contact>(left => left.Contacts)
+                .HasMany(left => left.Contacts)
                 .WithMany(right => right.ContactGroups)
                 .UsingEntity<Dictionary<string, object>>("group_membership",
                     x => x.HasOne<Contact>().WithMany().HasForeignKey("contact_id"),

@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Sendo.Api.Models
+namespace Sendo.Api.Data.Models
 {
     [Table("user", Schema = "user_data")]
     public class User

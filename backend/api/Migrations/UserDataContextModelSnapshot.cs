@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Sendo.Api.DataAccess;
-using Sendo.Api.Models;
+using Sendo.Api.Data.Models;
 
 namespace Sendo.Api.Migrations
 {
-    [DbContext(typeof(UserDataContext))]
+    [DbContext(typeof(UserDataPostgresContext))]
     partial class UserDataContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

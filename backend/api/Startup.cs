@@ -35,7 +35,7 @@ namespace Sendo.Api
                 settings = new ProductionSettings();
             }
 
-            services.AddDbContext<UserDataContext>(
+            services.AddDbContext<UserDataPostgresContext>(
                 opt => opt.UseNpgsql(
                     settings.DataDbConnectionString,
                     action => action.MigrationsHistoryTable("migrations_history", "management")

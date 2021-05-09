@@ -1,6 +1,6 @@
 using System;
 
-namespace Sendo.Api.Models
+namespace Sendo.Api.Data.Models
 {
     public class Credentials
     {

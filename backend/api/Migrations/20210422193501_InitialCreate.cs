@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Sendo.Api.Models;
+using Sendo.Api.Data.Models;
 
 namespace Sendo.Api.Migrations
 {

@@ -1,6 +1,6 @@
 
 
-namespace Sendo.Api.Models
+namespace Sendo.Api.Data.Models
 {
     public enum Gender
     {
