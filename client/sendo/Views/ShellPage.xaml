@@ -64,7 +64,7 @@
                 <AutoSuggestBox x:Name="NavViewSearchBox" QueryIcon="Find"/>
             </winui:NavigationView.AutoSuggestBox>
             <Grid HorizontalAlignment="Left" Width="1440" Margin="-110,0,0,0" >
-                <Frame x:Name="ContentFrame" IsTabStop="True" NavigationFailed="ContentFrame_NavigationFailed"  Height="1025" />
+                <Frame x:Name="ContentFrame" IsTabStop="True" NavigationFailed="ContentFrame_NavigationFailed"  Height="1025" Margin="120,0,0,0" />
             </Grid>
 
         </winui:NavigationView>
