@@ -152,19 +152,23 @@ namespace sendo.Views
             VariableList.Items.Clear();
             var raw = await HttpDataService.Main();
             JObject json = JObject.Parse(raw);
-            json.Properties().Children();
-            foreach (var pair in json)
-            {
-                VariableList.Items.Add(pair.Key);
-                if (pair.Value.HasValues == true)
-                {
-                    foreach (var pair2 in pair.Value as JObject) {
-                        VariableList.Items.Add(pair2.Key);
-                    }
-                }
-            }
+            Varlistadd(json);
         }
 
+        private void Varlistadd(JObject json) {
+            foreach (var pair in json)
+            {
+                if (pair.Value.HasValues == true)
+                {
+                    Varlistadd((JObject)pair.Value);
+                }
+                else
+                {
+                    VariableList.Items.Add(pair.Key);
+                }
+            }
+
+        }
         private void EditorLostFocus(object sender, RoutedEventArgs e)
         {
             editor.Focus(FocusState.Programmatic);
@@ -212,13 +216,8 @@ namespace sendo.Views
             {
                 if (pair.Value.HasValues == true)
                 {
-                    foreach (var pair2 in pair.Value as JObject)
-                    {
-                        oldvalue = "<" + pair2.Key + ">";
-                        newvalue = "" + pair2.Value + "";
-                        comp = crude.Replace(oldvalue, newvalue);
-                        crude = comp;
-                    }
+                   comp=varsplit(crude, replacer, (JObject)pair.Value);
+                   crude = comp;
                 }
                 else { 
                 oldvalue = "<" + pair.Key + ">";
