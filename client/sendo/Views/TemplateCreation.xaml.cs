@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using Windows.Storage;
@@ -151,9 +152,16 @@ namespace sendo.Views
             VariableList.Items.Clear();
             var raw = await HttpDataService.Main();
             JObject json = JObject.Parse(raw);
+            json.Properties().Children();
             foreach (var pair in json)
             {
                 VariableList.Items.Add(pair.Key);
+                if (pair.Value.HasValues == true)
+                {
+                    foreach (var pair2 in pair.Value as JObject) {
+                        VariableList.Items.Add(pair2.Key);
+                    }
+                }
             }
         }
 
@@ -202,12 +210,24 @@ namespace sendo.Views
             string newvalue = String.Empty;
             foreach (var pair in data)
             {
+                if (pair.Value.HasValues == true)
+                {
+                    foreach (var pair2 in pair.Value as JObject)
+                    {
+                        oldvalue = "<" + pair2.Key + ">";
+                        newvalue = "" + pair2.Value + "";
+                        comp = crude.Replace(oldvalue, newvalue);
+                        crude = comp;
+                    }
+                }
+                else { 
                 oldvalue = "<" + pair.Key + ">";
                 newvalue = "" + pair.Value + "";
                 //Debug.WriteLine(oldvalue);
                 //Debug.WriteLine(newvalue);
                 comp = crude.Replace(oldvalue, newvalue);
                 crude = comp;
+                }
             }
                 return comp;
         }
