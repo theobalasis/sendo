@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Npgsql;
 using Sendo.Api.Data.Models;
 
-namespace Sendo.Api.DataAccess
+namespace Sendo.Api.Data.Access
 {
     public class UserDataPostgresContext : DbContext
     {

@@ -42,6 +42,20 @@ namespace Sendo.Api
                 )
             );
 
+            services.AddHttpContextAccessor();
+
+            // Repositories are added as transient so as to prevent the persistence of
+            // transactions across unrelated operations.
+            services.AddTransient<IRepository<Campaign>, DbRepository<Campaign, UserDataPostgresContext>>();
+            services.AddTransient<IRepository<Contact>, DbRepository<Contact, UserDataPostgresContext>>();
+            services.AddTransient<IRepository<ContactGroup>, DbRepository<ContactGroup, UserDataPostgresContext>>();
+            services.AddTransient<IRepository<MailTemplate>, DbRepository<MailTemplate, UserDataPostgresContext>>();
+
+            services.AddTransient<IDbRepository<Campaign>, DbRepository<Campaign, UserDataPostgresContext>>();
+            services.AddTransient<IDbRepository<Contact>, DbRepository<Contact, UserDataPostgresContext>>();
+            services.AddTransient<IDbRepository<ContactGroup>, DbRepository<ContactGroup, UserDataPostgresContext>>();
+            services.AddTransient<IDbRepository<MailTemplate>, DbRepository<MailTemplate, UserDataPostgresContext>>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

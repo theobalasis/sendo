@@ -4,19 +4,12 @@ namespace Sendo.Api.Data.Models
 {
     public class Credentials
     {
-        public string MailAddress { get; init; }
-        public string Password { get; init; }
+        public Uri SmtpUri { get; init; } = new Uri("");
 
-        public override bool Equals(object obj)
-        {
-            return obj is Credentials credentials &&
-                   MailAddress == credentials.MailAddress &&
-                   Password == credentials.Password;
-        }
+        public Uri ImapUri { get; init; } = new Uri("");
 
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(MailAddress, Password);
-        }
+        public string MailAddress { get; init; } = "";
+
+        public string Password { get; init; } = "";
     }
 }
