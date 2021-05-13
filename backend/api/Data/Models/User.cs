@@ -10,5 +10,9 @@ namespace Sendo.Api.Data.Models
         public Guid Id { get; set; }
         [Column("mail_address")]
         public string MailAddress { get; set; }
+        [Column("password_hash")]
+        public string PasswordHash { get; set; }
+        [Column("salt")]
+        public string Salt { get; set; }
     }
 }

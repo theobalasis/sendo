@@ -5,11 +5,16 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Sendo.Api.Config;
-using Sendo.Api.DataAccess;
 using Microsoft.EntityFrameworkCore;
+using Sendo.Api.Data.Access;
+using Sendo.Api.Data.Models;
+using Sendo.Api.Endpoints.Security;
 
 namespace Sendo.Api
 {
+    /// <summary>
+    /// Configures the environment and services of the web application.
+    /// </summary>
     public class Startup
     {
         private IWebHostEnvironment? Environment { get; set; }
@@ -55,6 +60,12 @@ namespace Sendo.Api
             services.AddTransient<IDbRepository<Contact>, DbRepository<Contact, UserDataPostgresContext>>();
             services.AddTransient<IDbRepository<ContactGroup>, DbRepository<ContactGroup, UserDataPostgresContext>>();
             services.AddTransient<IDbRepository<MailTemplate>, DbRepository<MailTemplate, UserDataPostgresContext>>();
+
+            services.AddScoped<IAuthenticationService, SessionAuthenticationService>();
+            services.AddScoped<IEntityAuthorizationService<Campaign>, CampaignAuthorizationService>();
+            services.AddScoped<IEntityAuthorizationService<Contact>, ContactAuthorizationService>();
+            services.AddScoped<IEntityAuthorizationService<ContactGroup>, ContactGroupAuthorizationService>();
+            services.AddScoped<IEntityAuthorizationService<MailTemplate>, MailTemplateAuthorizationService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

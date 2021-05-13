@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Sendo.Api.Data.Access;
@@ -10,9 +11,10 @@ using Sendo.Api.Data.Models;
 namespace Sendo.Api.Migrations
 {
     [DbContext(typeof(UserDataPostgresContext))]
-    partial class UserDataContextModelSnapshot : ModelSnapshot
+    [Migration("20210513232435_ExtendUser")]
+    partial class ExtendUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
