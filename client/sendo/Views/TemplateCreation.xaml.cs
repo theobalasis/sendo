@@ -184,8 +184,9 @@ namespace sendo.Views
             editor.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out editortext);
             //var raw = await HttpDataService.Main();
             //JObject json = JObject.Parse(raw);
-            HttpDataService url = new HttpDataService("https://jsonplaceholder.typicode.com");
-            JObject json = await url.GetAsync<JObject>("users/1", null, true);
+            HttpDataService url = new HttpDataService(ApplicationData.Current.LocalSettings.Values["ServerUrl"] as String);
+            String uri = ApplicationData.Current.LocalSettings.Values["ServerUri"] as String;
+            JObject json = await url.GetAsync<JObject>(uri, null, true);
             var comp = Varsplit(editortext , patern, json);
             Windows.Storage.Pickers.FileSavePicker savePicker = new Windows.Storage.Pickers.FileSavePicker();
             savePicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
