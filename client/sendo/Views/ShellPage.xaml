@@ -10,9 +10,9 @@
     Loaded="OnLoaded"
     mc:Ignorable="d"
     
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" MinHeight="1024" MinWidth="1440" Width="1660" Height="1025" HorizontalAlignment="Stretch">
-
-    <Frame x:Name="shellFrame" Margin="0,0,10,4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" MinHeight="1024" MinWidth="1440" Width="1660" Height="1025" HorizontalAlignment="Left">
+    <Viewbox>
+    <Frame x:Name="shellFrame" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
 
         <winui:NavigationView x:Name="NavView"
                           Loaded="NavView_Loaded"
@@ -63,13 +63,14 @@
 
                 <AutoSuggestBox x:Name="NavViewSearchBox" QueryIcon="Find"/>
             </winui:NavigationView.AutoSuggestBox>
-            <Grid HorizontalAlignment="Left" Width="1440" Margin="-110,0,0,0" >
-                <Frame x:Name="ContentFrame" IsTabStop="True" NavigationFailed="ContentFrame_NavigationFailed"  Height="1025" Margin="120,0,0,0" />
-            </Grid>
+            <Viewbox MinWidth="1400" HorizontalAlignment="Stretch">
+                <Frame x:Name="ContentFrame" IsTabStop="True" NavigationFailed="ContentFrame_NavigationFailed" HorizontalAlignment="Stretch" MinHeight="1025" Margin="0,0,0,0" />
+            </Viewbox>
 
         </winui:NavigationView>
     </Frame>
-    <VisualStateManager.VisualStateGroups>
+    </Viewbox>
+        <VisualStateManager.VisualStateGroups>
         <VisualStateGroup>
             <VisualState>
                 <VisualState.StateTriggers>
