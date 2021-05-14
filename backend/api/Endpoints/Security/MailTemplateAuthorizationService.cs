@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Sendo.Api.Data.Access;
@@ -14,14 +15,24 @@ namespace Sendo.Api.Endpoints.Security
             _mailTemplateRepository = mailTemplateRepository;
         }
 
+        public bool Authorize(User user, MailTemplate entity)
+        {
+            var mailTemplate = _mailTemplateRepository.Query()
+                                                      .FirstOrDefault(mt =>
+                                                          mt.Id == entity.Id && mt.UserId == user.Id
+                                                      );
+
+            return mailTemplate != null;
+        }
+
         public async Task<bool> AuthorizeAsync(User user, MailTemplate entity)
         {
-            var campaign = await _mailTemplateRepository.Query()
-                                                    .FirstOrDefaultAsync<MailTemplate?>(c =>
-                                                        c.Id == entity.Id && c.UserId == user.Id
-                                                    );
+            var mailTemplate = await _mailTemplateRepository.Query()
+                                                            .FirstOrDefaultAsync<MailTemplate?>(mt =>
+                                                                mt.Id == entity.Id && mt.UserId == user.Id
+                                                            );
 
-            return campaign != null;
+            return mailTemplate != null;
         }
     }
 }

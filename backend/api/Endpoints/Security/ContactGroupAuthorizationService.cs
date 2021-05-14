@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Sendo.Api.Data.Access;
@@ -14,14 +15,24 @@ namespace Sendo.Api.Endpoints.Security
             _contactGroupRepository = contactGroupRepository;
         }
 
+        public bool Authorize(User user, ContactGroup entity)
+        {
+            var contactGroup = _contactGroupRepository.Query()
+                                                  .FirstOrDefault(cg =>
+                                                      cg.Id == entity.Id && cg.UserId == user.Id
+                                                  );
+
+            return contactGroup != null;
+        }
+
         public async Task<bool> AuthorizeAsync(User user, ContactGroup entity)
         {
-            var campaign = await _contactGroupRepository.Query()
-                                                    .FirstOrDefaultAsync<ContactGroup?>(c =>
-                                                        c.Id == entity.Id && c.UserId == user.Id
+            var contactGroup = await _contactGroupRepository.Query()
+                                                    .FirstOrDefaultAsync<ContactGroup?>(cg =>
+                                                        cg.Id == entity.Id && cg.UserId == user.Id
                                                     );
 
-            return campaign != null;
+            return contactGroup != null;
         }
     }
 }

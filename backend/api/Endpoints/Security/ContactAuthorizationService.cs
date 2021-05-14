@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Sendo.Api.Data.Access;
@@ -12,6 +13,16 @@ namespace Sendo.Api.Endpoints.Security
         public ContactAuthorizationService(IRepository<Contact> contactRepository)
         {
             _contactRepository = contactRepository;
+        }
+
+        public bool Authorize(User user, Contact entity)
+        {
+            var contact = _contactRepository.Query()
+                                             .FirstOrDefault(c =>
+                                                 c.Id == entity.Id && c.UserId == user.Id
+                                             );
+
+            return contact != null;
         }
 
         public async Task<bool> AuthorizeAsync(User user, Contact entity)
