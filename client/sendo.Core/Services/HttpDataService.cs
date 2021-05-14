@@ -16,7 +16,7 @@ namespace sendo.Core.Services
         private readonly Dictionary<string, object> responseCache;
         private HttpClient client;
 
-        public HttpDataService(string defaultBaseUrl = "")
+        public HttpDataService(string defaultBaseUrl )
         {
             client = new HttpClient();
 
@@ -39,7 +39,7 @@ namespace sendo.Core.Services
                 AddAuthorizationHeader(accessToken);
                 var json = await client.GetStringAsync(uri);
                 result = await Task.Run(() => JsonConvert.DeserializeObject<T>(json));
-
+                
                 if (responseCache.ContainsKey(uri))
                 {
                     responseCache[uri] = result;

@@ -2,6 +2,8 @@
 using sendo.Services;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -31,6 +33,9 @@ namespace sendo.Views
 
         private void doLogin(object sender, RoutedEventArgs e)
         {
+            String un = email.Text;
+            String pw = passwd.Password;
+            Debug.WriteLine(un+":"+pw);
             Frame.Navigate(typeof(Home));
         }
 

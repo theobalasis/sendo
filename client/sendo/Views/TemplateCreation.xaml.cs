@@ -150,8 +150,11 @@ namespace sendo.Views
         private async void fetchitems(object sender, RoutedEventArgs e)
         {
             VariableList.Items.Clear();
-            var raw = await HttpDataService.Main();
-            JObject json = JObject.Parse(raw);
+            HttpDataService url =new HttpDataService(ApplicationData.Current.LocalSettings.Values["ServerUrl"] as String);
+            String uri = ApplicationData.Current.LocalSettings.Values["ServerUri"] as String;
+            JObject json = await url.GetAsync<JObject>(uri, null,true);
+            //var raw = await HttpDataService.Main();
+            //JObject json = JObject.Parse(raw);
             Varlistadd(json);
         }
 
@@ -179,9 +182,11 @@ namespace sendo.Views
             var patern = "<.+>";
             String editortext = string.Empty;
             editor.Document.GetText(Windows.UI.Text.TextGetOptions.FormatRtf, out editortext);
-            var raw = await HttpDataService.Main();
-            JObject json = JObject.Parse(raw);
-            var comp = varsplit(editortext , patern, json);
+            //var raw = await HttpDataService.Main();
+            //JObject json = JObject.Parse(raw);
+            HttpDataService url = new HttpDataService("https://jsonplaceholder.typicode.com");
+            JObject json = await url.GetAsync<JObject>("users/1", null, true);
+            var comp = Varsplit(editortext , patern, json);
             Windows.Storage.Pickers.FileSavePicker savePicker = new Windows.Storage.Pickers.FileSavePicker();
             savePicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
 
@@ -207,7 +212,7 @@ namespace sendo.Views
                 }
             }
         }
-        private String varsplit(String crude,string replacer, JObject data ) {
+        private String Varsplit(String crude,string replacer, JObject data ) {
             
             string comp = String.Empty;
             string oldvalue = String.Empty;
@@ -216,7 +221,7 @@ namespace sendo.Views
             {
                 if (pair.Value.HasValues == true)
                 {
-                   comp=varsplit(crude, replacer, (JObject)pair.Value);
+                   comp=Varsplit(crude, replacer, (JObject)pair.Value);
                    crude = comp;
                 }
                 else { 

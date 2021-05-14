@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
@@ -7,6 +8,7 @@ using sendo.Helpers;
 using sendo.Services;
 
 using Windows.ApplicationModel;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -38,6 +40,8 @@ namespace sendo.Views
         public SettingsPage()
         {
             InitializeComponent();
+            ServerUrl.Text = ApplicationData.Current.LocalSettings.Values["ServerUrl"] as string;
+            ServerUri.Text = ApplicationData.Current.LocalSettings.Values["ServerUri"] as string;
         }
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
@@ -85,5 +89,15 @@ namespace sendo.Views
         }
 
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+        private void SaveUrlSetting(object sender, RoutedEventArgs e)
+        {
+            ApplicationData.Current.LocalSettings.Values["ServerUrl"]= ServerUrl.Text;
+        }
+
+        private void SaveUriSetting(object sender, RoutedEventArgs e)
+        {
+           ApplicationData.Current.LocalSettings.Values["ServerUri"] = ServerUri.Text;
+        }
     }
 }

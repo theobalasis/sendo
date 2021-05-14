@@ -14,8 +14,8 @@
             <RowDefinition Height="854*"/>
         </Grid.RowDefinitions>
         <Border BorderThickness="1" BorderBrush="Black" Margin="0,0,0,15" Background="Black"/>
-        <PasswordBox HorizontalAlignment="Center" Margin="0,485,0,0" VerticalAlignment="Top" Width="318" Height="50" Password="" FontSize="36" Grid.Row="2"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,415,0,0" Text="email" TextWrapping="Wrap" VerticalAlignment="Top" Width="318" RenderTransformOrigin="0.5,0.5" Height="50" FontSize="24" FontFamily="Arial Black" Grid.Row="2">
+        <PasswordBox x:Name="passwd" HorizontalAlignment="Center" Margin="0,485,0,0" VerticalAlignment="Top" Width="318" Height="50" Password="" FontSize="36" Grid.Row="2"/>
+        <TextBox x:Name="email" HorizontalAlignment="Center" Margin="0,415,0,0" Text="email" TextWrapping="Wrap" VerticalAlignment="Top" Width="318" RenderTransformOrigin="0.5,0.5" Height="50" FontSize="24" FontFamily="Arial Black" Grid.Row="2">
             <TextBox.RenderTransform>
                 <CompositeTransform Rotation="0"/>
             </TextBox.RenderTransform>
