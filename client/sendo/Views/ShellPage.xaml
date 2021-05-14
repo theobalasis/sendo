@@ -12,7 +12,7 @@
     
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" MinHeight="1024" MinWidth="1440" Width="1660" Height="1025" HorizontalAlignment="Left">
     <Viewbox>
-    <Frame x:Name="shellFrame" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+      <Frame x:Name="shellFrame" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
 
         <winui:NavigationView x:Name="NavView"
                           Loaded="NavView_Loaded"
@@ -58,7 +58,12 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE762;"/>
                     </winui:NavigationViewItem.Icon>
                 </winui:NavigationViewItem>
-            </winui:NavigationView.MenuItems>
+                    <winui:NavigationViewItem Tag="Login" Content="Login">
+                        <winui:NavigationViewItem.Icon>
+                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE716;"/>
+                        </winui:NavigationViewItem.Icon>
+                    </winui:NavigationViewItem>
+                </winui:NavigationView.MenuItems>
             <winui:NavigationView.AutoSuggestBox>
 
                 <AutoSuggestBox x:Name="NavViewSearchBox" QueryIcon="Find"/>

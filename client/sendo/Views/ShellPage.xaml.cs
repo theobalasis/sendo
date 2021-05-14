@@ -53,7 +53,8 @@ namespace sendo.Views
             ("About", typeof(About)),
             ("Template Creation", typeof(Editor)),
             ("Add Contract", typeof(AddContact)),
-            ("Campaign", typeof(Campaign))
+            ("Campaign", typeof(Campaign)),
+            ("Login", typeof(Login))
         };
 
         private void NavView_Loaded(object sender, RoutedEventArgs e)
@@ -79,9 +80,7 @@ namespace sendo.Views
                 NavView_Navigate(navItemTag, args.RecommendedNavigationTransitionInfo);
             }
         }
-        private void NavView_Navigate(
-    string navItemTag,
-    Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo transitionInfo)
+        private void NavView_Navigate(string navItemTag,Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo transitionInfo)
         {
             Type _page = null;
             if (navItemTag == "settings")
@@ -175,47 +174,12 @@ namespace sendo.Views
             }
         }
 
-
-
-
-
-
-
-
-
-
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
             // Keyboard accelerators are added here to avoid showing 'Alt + left' tooltip on the page.
             // More info on tracking issue https://github.com/Microsoft/microsoft-ui-xaml/issues/8
             KeyboardAccelerators.Add(_altLeftKeyboardAccelerator);
             KeyboardAccelerators.Add(_backKeyboardAccelerator);
-        }
-
-
-        private void ShellMenuItemClick_Views_Main(object sender, RoutedEventArgs e)
-        {
-            MenuNavigationHelper.UpdateView(typeof(Home));
-        }
-
-        private void ShellMenuItemClick_Views_TelerikDataGrid(object sender, RoutedEventArgs e)
-        {
-            MenuNavigationHelper.UpdateView(typeof(TelerikDataGridPage));
-        }
-
-        private void ShellMenuItemClick_File_Settings(object sender, RoutedEventArgs e)
-        {
-            MenuNavigationHelper.OpenInRightPane(typeof(SettingsPage));
-        }
-
-        private void ShellMenuItemClick_File_Exit(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Exit();
-        }
-
-        private void ShellMenuItemClick_Views_Login(object sender, RoutedEventArgs e)
-        {
-            MenuNavigationHelper.UpdateView(typeof(Login));
         }
 
         private static KeyboardAccelerator BuildKeyboardAccelerator(VirtualKey key, VirtualKeyModifiers? modifiers = null)
@@ -250,19 +214,5 @@ namespace sendo.Views
         }
 
         private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
-        private void ShellMenuItemClick_Views_Campaing(object sender, RoutedEventArgs e)
-        {
-                MenuNavigationHelper.UpdateView(typeof(Campaign));
-        }
-        public static void EnableShell()
-        {
-            
-        }
-
-        private void NavigationView_ItemInvoked(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewItemInvokedEventArgs args)
-        {
-
-        }
     }
 }

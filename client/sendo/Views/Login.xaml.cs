@@ -1,4 +1,5 @@
 ﻿using sendo.Helpers;
+using sendo.Services;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,19 +29,14 @@ namespace sendo.Views
             this.InitializeComponent();
         }
 
-        private void Password_SelectionChanged(object sender, RoutedEventArgs e)
+        private void doLogin(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(Home));
         }
 
-        private void tosignup(object sender, RoutedEventArgs e)
+        private void toAdvanced(object sender, RoutedEventArgs e)
         {
-            MenuNavigationHelper.UpdateView(typeof(Signup));
-        }
-
-        private void toCampaign(object sender, RoutedEventArgs e)
-        {
-            MenuNavigationHelper.UpdateView(typeof(Campaign));
+            Frame.Navigate(typeof(AdvancedLogin));
         }
     }
 }

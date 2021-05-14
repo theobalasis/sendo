@@ -26,5 +26,15 @@ namespace sendo.Views
         {
             this.InitializeComponent();
         }
+
+        private void doLogin(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Home));
+        }
+
+        private void back(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Login));
+        }
     }
 }
