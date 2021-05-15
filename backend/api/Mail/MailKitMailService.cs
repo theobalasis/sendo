@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
@@ -17,8 +16,8 @@ namespace Sendo.Api.Mail
                 {
                     try
                     {
-                        await smtpClient.ConnectAsync(credentials.SmtpUri);
-                        await imapClient.ConnectAsync(credentials.ImapUri);
+                        await smtpClient.ConnectAsync(credentials.SmtpHost, credentials.SmtpPort);
+                        await imapClient.ConnectAsync(credentials.ImapHost, credentials.ImapPort);
                         return true;
                     }
                     catch
@@ -35,8 +34,8 @@ namespace Sendo.Api.Mail
             {
                 using (var imapClient = new ImapClient())
                 {
-                    await smtpClient.ConnectAsync(credentials.SmtpUri);
-                    await imapClient.ConnectAsync(credentials.ImapUri);
+                    await smtpClient.ConnectAsync(credentials.SmtpHost, credentials.SmtpPort);
+                    await imapClient.ConnectAsync(credentials.ImapHost, credentials.ImapPort);
                     try
                     {
                         await smtpClient.AuthenticateAsync(credentials.MailAddress, credentials.Password);

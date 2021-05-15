@@ -4,12 +4,16 @@ namespace Sendo.Api.Data.Models
 {
     public class Credentials
     {
-        public Uri SmtpUri { get; init; } = new Uri("");
+        public string SmtpHost { get; set; }
 
-        public Uri ImapUri { get; init; } = new Uri("");
+        public int SmtpPort { get; set; } = 587;
 
-        public string MailAddress { get; init; } = "";
+        public string ImapHost { get; set; }
 
-        public string Password { get; init; } = "";
+        public int ImapPort { get; set; } = 993;
+
+        public string MailAddress { get; set; }
+
+        public string Password { get; set; }
     }
 }

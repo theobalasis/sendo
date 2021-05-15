@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Sendo.Api.Data.Access;
 using Sendo.Api.Data.Models;
 using Sendo.Api.Endpoints.Security;
+using Sendo.Api.Mail;
 
 namespace Sendo.Api
 {
@@ -55,11 +56,17 @@ namespace Sendo.Api
             services.AddTransient<IRepository<Contact>, DbRepository<Contact, UserDataPostgresContext>>();
             services.AddTransient<IRepository<ContactGroup>, DbRepository<ContactGroup, UserDataPostgresContext>>();
             services.AddTransient<IRepository<MailTemplate>, DbRepository<MailTemplate, UserDataPostgresContext>>();
+            services.AddTransient<IRepository<SessionToken>, DbRepository<SessionToken, UserDataPostgresContext>>();
+            services.AddTransient<IRepository<User>, DbRepository<User, UserDataPostgresContext>>();
 
             services.AddTransient<IDbRepository<Campaign>, DbRepository<Campaign, UserDataPostgresContext>>();
             services.AddTransient<IDbRepository<Contact>, DbRepository<Contact, UserDataPostgresContext>>();
             services.AddTransient<IDbRepository<ContactGroup>, DbRepository<ContactGroup, UserDataPostgresContext>>();
             services.AddTransient<IDbRepository<MailTemplate>, DbRepository<MailTemplate, UserDataPostgresContext>>();
+            services.AddTransient<IDbRepository<SessionToken>, DbRepository<SessionToken, UserDataPostgresContext>>();
+            services.AddTransient<IDbRepository<User>, DbRepository<User, UserDataPostgresContext>>();
+
+            services.AddTransient<IMailService, MailKitMailService>();
 
             services.AddScoped<IAuthenticationService, SessionAuthenticationService>();
             services.AddScoped<IEntityAuthorizationService<Campaign>, CampaignAuthorizationService>();
@@ -67,7 +74,7 @@ namespace Sendo.Api
             services.AddScoped<IEntityAuthorizationService<ContactGroup>, ContactGroupAuthorizationService>();
             services.AddScoped<IEntityAuthorizationService<MailTemplate>, MailTemplateAuthorizationService>();
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sendo API", Version = "v1" });
