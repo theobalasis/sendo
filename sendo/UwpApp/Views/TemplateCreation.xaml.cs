@@ -152,10 +152,16 @@ namespace Sendo.Views
             VariableList.Items.Clear();
             HttpDataService url =new HttpDataService(ApplicationData.Current.LocalSettings.Values["ServerUrl"] as String);
             String uri = ApplicationData.Current.LocalSettings.Values["ServerUri"] as String;
-            JObject json = await url.GetAsync<JObject>(uri, null,true);
-            //var raw = await HttpDataService.Main();
-            //JObject json = JObject.Parse(raw);
-            Varlistadd(json);
+            try
+            {
+                JObject json = await url.GetAsync<JObject>(uri, null, true);
+                //var raw = await HttpDataService.Main();
+                //JObject json = JObject.Parse(raw);
+                Varlistadd(json);
+            }
+            catch (Exception ex) {
+                Debug.WriteLine(ex);
+            }
         }
 
         private void Varlistadd(JObject json) {

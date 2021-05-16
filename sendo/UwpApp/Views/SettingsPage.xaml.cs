@@ -40,8 +40,12 @@ namespace Sendo.Views
         public SettingsPage()
         {
             InitializeComponent();
-            ServerUrl.Text = ApplicationData.Current.LocalSettings.Values["ServerUrl"] as string;
-            ServerUri.Text = ApplicationData.Current.LocalSettings.Values["ServerUri"] as string;
+            String text1 = ApplicationData.Current.LocalSettings.Values["ServerUrl"] as string;
+            String text2 = ApplicationData.Current.LocalSettings.Values["ServerUri"] as string;
+            if (text1!=null && text2!=null ) {
+                ServerUrl.Text = text1;
+                ServerUri.Text = text2;
+            }
         }
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
