@@ -34,8 +34,8 @@ namespace Sendo.Views
 
         private void doLogin(object sender, RoutedEventArgs e)
         {
-            String un = email.Text;
-            String pw = passwd.Password;
+            String un = EmailField.Text;
+            String pw = PasswordField.Password;
             Debug.WriteLine(un+":"+pw);
             Frame.Navigate(typeof(Home));
         }
@@ -43,6 +43,11 @@ namespace Sendo.Views
         private void toAdvanced(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(AdvancedLogin));
+        }
+
+        private void SignInLabel_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

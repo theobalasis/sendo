@@ -5,77 +5,69 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
-    xmlns:views="using:Sendo.Views"
     Style="{StaticResource PageStyle}"
     Loaded="OnLoaded"
     mc:Ignorable="d"
     
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" MinHeight="1024" MinWidth="1440" Width="1660" Height="1025" HorizontalAlignment="Left">
-    <Viewbox>
-      <Frame x:Name="shellFrame" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
-
-        <winui:NavigationView x:Name="NavView"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" MinHeight="540" MinWidth="960" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" FontSize="12">
+    <winui:NavigationView x:Name="NavView"
                           Loaded="NavView_Loaded"
                          ItemInvoked="NavView_ItemInvoked"
-                         BackRequested="NavView_BackRequested" Height="1025" >
+                         BackRequested="NavView_BackRequested" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" >
 
-            <winui:NavigationView.MenuItems>
-                <winui:NavigationViewItem Tag="home" Content="Home">
-                    <winui:NavigationViewItem.Icon>
-                        <SymbolIcon Symbol="Home"/>
-                    </winui:NavigationViewItem.Icon>
-                </winui:NavigationViewItem>
-                <winui:NavigationViewItemSeparator/>
-                <winui:NavigationViewItemHeader x:Name="MainPagesHeader"
+        <winui:NavigationView.MenuItems>
+            <winui:NavigationViewItem Tag="home" Content="Home">
+                <winui:NavigationViewItem.Icon>
+                    <SymbolIcon Symbol="Home"/>
+                </winui:NavigationViewItem.Icon>
+            </winui:NavigationViewItem>
+            <winui:NavigationViewItemSeparator/>
+            <winui:NavigationViewItemHeader x:Name="MainPagesHeader"
                                            Content="Main pages"/>
-                <winui:NavigationViewItem Tag="MailTemplates" Content="Mail Templates">
-                    <winui:NavigationViewItem.Icon>
-                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEDB3;"/>
-                    </winui:NavigationViewItem.Icon>
-                </winui:NavigationViewItem>
-                <winui:NavigationViewItem Tag="Contact Groups" Content="Contact Groups">
-                    <winui:NavigationViewItem.Icon>
-                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE902;"/>
-                    </winui:NavigationViewItem.Icon>
-                </winui:NavigationViewItem>
-                <winui:NavigationViewItem Tag="About" Content="About">
-                    <winui:NavigationViewItem.Icon>
-                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE946;"/>
-                    </winui:NavigationViewItem.Icon>
-                </winui:NavigationViewItem>
-                <winui:NavigationViewItem Tag="Template Creation" Content="Template Creation">
-                    <winui:NavigationViewItem.Icon>
-                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE8A5;"/>
-                    </winui:NavigationViewItem.Icon>
-                </winui:NavigationViewItem>
-                <winui:NavigationViewItem Tag="Add Contract" Content="Add Contract">
-                    <winui:NavigationViewItem.Icon>
-                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE82E;"/>
-                    </winui:NavigationViewItem.Icon>
-                </winui:NavigationViewItem>
-                <winui:NavigationViewItem Tag="Campaign" Content="Campaign">
-                    <winui:NavigationViewItem.Icon>
-                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE762;"/>
-                    </winui:NavigationViewItem.Icon>
-                </winui:NavigationViewItem>
-                    <winui:NavigationViewItem Tag="Login" Content="Login">
-                        <winui:NavigationViewItem.Icon>
-                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE716;"/>
-                        </winui:NavigationViewItem.Icon>
-                    </winui:NavigationViewItem>
-                </winui:NavigationView.MenuItems>
-            <winui:NavigationView.AutoSuggestBox>
+            <winui:NavigationViewItem Tag="MailTemplates" Content="Mail Templates">
+                <winui:NavigationViewItem.Icon>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEDB3;"/>
+                </winui:NavigationViewItem.Icon>
+            </winui:NavigationViewItem>
+            <winui:NavigationViewItem Tag="Contact Groups" Content="Contact Groups">
+                <winui:NavigationViewItem.Icon>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE902;"/>
+                </winui:NavigationViewItem.Icon>
+            </winui:NavigationViewItem>
+            <winui:NavigationViewItem Tag="About" Content="About">
+                <winui:NavigationViewItem.Icon>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE946;"/>
+                </winui:NavigationViewItem.Icon>
+            </winui:NavigationViewItem>
+            <winui:NavigationViewItem Tag="Template Creation" Content="Template Creation">
+                <winui:NavigationViewItem.Icon>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE8A5;"/>
+                </winui:NavigationViewItem.Icon>
+            </winui:NavigationViewItem>
+            <winui:NavigationViewItem Tag="Add Contract" Content="Add Contract">
+                <winui:NavigationViewItem.Icon>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE82E;"/>
+                </winui:NavigationViewItem.Icon>
+            </winui:NavigationViewItem>
+            <winui:NavigationViewItem Tag="Campaign" Content="Campaign">
+                <winui:NavigationViewItem.Icon>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE762;"/>
+                </winui:NavigationViewItem.Icon>
+            </winui:NavigationViewItem>
+            <winui:NavigationViewItem Tag="Login" Content="Login">
+                <winui:NavigationViewItem.Icon>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE716;"/>
+                </winui:NavigationViewItem.Icon>
+            </winui:NavigationViewItem>
+        </winui:NavigationView.MenuItems>
+        <winui:NavigationView.AutoSuggestBox>
 
-                <AutoSuggestBox x:Name="NavViewSearchBox" QueryIcon="Find"/>
-            </winui:NavigationView.AutoSuggestBox>
-            <Viewbox MinWidth="1400" HorizontalAlignment="Stretch">
-                <Frame x:Name="ContentFrame" IsTabStop="True" NavigationFailed="ContentFrame_NavigationFailed" HorizontalAlignment="Stretch" MinHeight="1025" Margin="0,0,0,0" />
-            </Viewbox>
+            <AutoSuggestBox x:Name="NavViewSearchBox" QueryIcon="Find"/>
+        </winui:NavigationView.AutoSuggestBox>
+        <Frame x:Name="ContentFrame" IsTabStop="True" NavigationFailed="ContentFrame_NavigationFailed" />
 
-        </winui:NavigationView>
-    </Frame>
-    </Viewbox>
-        <VisualStateManager.VisualStateGroups>
+    </winui:NavigationView>
+    <VisualStateManager.VisualStateGroups>
         <VisualStateGroup>
             <VisualState>
                 <VisualState.StateTriggers>
