@@ -16,6 +16,11 @@
                          BackRequested="NavView_BackRequested" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" >
 
         <winui:NavigationView.MenuItems>
+            <winui:NavigationViewItem Tag="Campaigns" Content="Campaigns">
+                <winui:NavigationViewItem.Icon>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE762;"/>
+                </winui:NavigationViewItem.Icon>
+            </winui:NavigationViewItem>
             <winui:NavigationViewItem Tag="Mail Templates" Content="Mail Templates">
                 <winui:NavigationViewItem.Icon>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEDB3;"/>
@@ -31,14 +36,8 @@
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE946;"/>
                 </winui:NavigationViewItem.Icon>
             </winui:NavigationViewItem>
-            <winui:NavigationViewItem Tag="Campaigns" Content="Campaigns">
-                <winui:NavigationViewItem.Icon>
-                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE762;"/>
-                </winui:NavigationViewItem.Icon>
-            </winui:NavigationViewItem>
         </winui:NavigationView.MenuItems>
         <winui:NavigationView.AutoSuggestBox>
-
             <AutoSuggestBox x:Name="NavViewSearchBox" QueryIcon="Find"/>
         </winui:NavigationView.AutoSuggestBox>
         <Frame x:Name="ContentFrame" IsTabStop="True" NavigationFailed="ContentFrame_NavigationFailed" />

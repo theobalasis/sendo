@@ -134,8 +134,8 @@
     <Compile Include="Views\AdvancedLogin.xaml.cs">
       <DependentUpon>AdvancedLogin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Campaign.xaml.cs">
-      <DependentUpon>Campaign.xaml</DependentUpon>
+    <Compile Include="Views\Campaigns.xaml.cs">
+      <DependentUpon>Campaigns.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Contact.xaml.cs">
       <DependentUpon>Contact.xaml</DependentUpon>
@@ -158,8 +158,8 @@
     <Compile Include="Views\TemplateCreation.xaml.cs">
       <DependentUpon>TemplateCreation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TemplateMenu.xaml.cs">
-      <DependentUpon>TemplateMenu.xaml</DependentUpon>
+    <Compile Include="Views\MailTemplates.xaml.cs">
+      <DependentUpon>MailTemplates.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -211,7 +211,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Campaign.xaml">
+    <Page Include="Views\Campaigns.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -243,15 +243,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\TemplateMenu.xaml">
+    <Page Include="Views\MailTemplates.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection">
-      <Version>5.0.1</Version>
-    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.11</Version>
     </PackageReference>

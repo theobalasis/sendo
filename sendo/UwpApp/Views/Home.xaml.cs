@@ -16,7 +16,7 @@ namespace Sendo.UwpApp.Views
         }
         private void addcampaing(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Campaign));
+            Frame.Navigate(typeof(Campaigns));
         }
 
     }

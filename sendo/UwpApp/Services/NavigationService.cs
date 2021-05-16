@@ -108,11 +108,11 @@ namespace Sendo.UwpApp.Services
             var frame = sender as Frame;
             if (frame != null)
             {
-                bool clearNavigation = (bool)frame.Tag;
-                if (clearNavigation)
-                {
-                    frame.BackStack.Clear();
-                }
+                //bool clearNavigation = (bool)frame.Tag;
+                //if (clearNavigation)
+                //{
+                //    frame.BackStack.Clear();
+                //}
 
                 Navigated?.Invoke(sender, e);
             }

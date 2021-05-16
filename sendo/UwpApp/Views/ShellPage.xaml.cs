@@ -23,8 +23,8 @@ namespace Sendo.UwpApp.Views
 
         private readonly List<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
         {
-            ("Campaign", typeof(Campaign)),
-            ("Contact Groups", typeof(ContactGroup)),
+            ("Campaigns", typeof(Campaigns)),
+            ("Contact Groups", typeof(ContactGroups)),
             ("Mail Templates", typeof(MailTemplates))
         };
 
@@ -50,9 +50,6 @@ namespace Sendo.UwpApp.Views
         {
             InitializeComponent();
             NavigationService.Frame = ContentFrame;
-            //ApplicationView.PreferredLaunchViewSize = new Size(1650, 1024);
-            //ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
-            //ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(1440, 1024));
         }
 
         private void ContentFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)

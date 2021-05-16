@@ -1,11 +1,9 @@
-﻿using System;
+﻿using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using RestSharp;
 
 namespace Sendo.UwpApp.Services
 {

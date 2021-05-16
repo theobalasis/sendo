@@ -1,6 +1,5 @@
 ﻿using Sendo.UwpApp.Services;
 using System;
-using System.Diagnostics;
 using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Xaml;
