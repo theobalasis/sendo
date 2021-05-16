@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="sendo.Views.Signup"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:sendo.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="480" Height="360">
+
+    <RelativePanel Width="480" Height="360">
+        <TextBlock x:Name="Signupdescription" Text="Signup." Height="64" FontSize="36" VerticalAlignment="Top" TextAlignment="Center" Width="480"/>
+        <TextBlock x:Name="User" Text="Username:" RelativePanel.Below="Signupdescription" TextWrapping="Wrap" Height="30" />
+        <TextBlock x:Name="Password"  Text="Password:" RelativePanel.Below="User" TextWrapping="Wrap" Height="30" SelectionChanged="Password_SelectionChanged"/>
+        <TextBox x:Name="Userbox"  Text="" RelativePanel.RightOf="User" RelativePanel.AlignVerticalCenterWith="User" RelativePanel.AlignRightWith="Signupdescription" TextWrapping="Wrap" />
+        <TextBox x:Name="Passbox"  Text="" RelativePanel.RightOf="Password" RelativePanel.AlignVerticalCenterWith="Password" RelativePanel.AlignRightWith="Signupdescription" TextWrapping="Wrap" />
+        <Rectangle x:Name="x" Height="149" RelativePanel.Below="Passbox" Width="479"/>
+        <Button x:Name="CancelB" Content="Cancel" Height="44" Width="84" RelativePanel.Below="x" VerticalAlignment="Bottom"/>
+        <Rectangle x:Name="y" RelativePanel.RightOf="CancelB" RelativePanel.Below="x" Width="312"/>
+        <Button x:Name="ConfirmB" Content="Confirm" Height="44" Width="84" RelativePanel.RightOf="y" RelativePanel.Below="x" VerticalAlignment="Bottom" Click="toCampaign"/>
+        <TextBlock x:Name="z" Height="39" RelativePanel.Below="CancelB" Text="Existing User?" VerticalAlignment="Center" Padding="5" TextWrapping="Wrap"/>
+        <Button x:Name="loginbutton" Content="Log in" RelativePanel.RightOf="z" RelativePanel.Below="CancelB" Height="34" Width="76" Click="tologin"/>
+
+    </RelativePanel>
+</Page>
