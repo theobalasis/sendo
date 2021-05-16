@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using muxc = Microsoft.UI.Xaml.Controls;
 using Windows.UI.ViewManagement;
 using Windows.Foundation;
+using sendo.Views;
 
 namespace Sendo.Views
 {
