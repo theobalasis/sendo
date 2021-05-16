@@ -25,7 +25,7 @@
             </Border>
         </StackPanel>
         <StackPanel Padding="50" Spacing="30" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-            <Button FontFamily="Segoe MDL2 Assets" FontSize="72" Height="90" Width="90" Content="&#xECCD;" Background="Transparent"/>
+            <Button FontFamily="Segoe MDL2 Assets" FontSize="72" Height="90" Width="90" Content="&#xECCD;" Background="Transparent" Click="createTemplate"/>
 
         </StackPanel>
         <TextBlock Text="Templates" TextWrapping="Wrap" Margin="560,140,560,834" FontSize="36" TextAlignment="Center" FontFamily="Arial"/>

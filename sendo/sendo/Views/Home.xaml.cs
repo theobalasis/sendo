@@ -26,7 +26,10 @@ namespace sendo.Views
         {
             this.InitializeComponent();
         }
+        private void addcampaing(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Campaign));
+        }
 
-       
     }
 }

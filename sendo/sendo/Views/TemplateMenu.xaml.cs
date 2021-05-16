@@ -26,6 +26,9 @@ namespace sendo.Views
         {
             this.InitializeComponent();
         }
-        
+        private void createTemplate(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Editor));
+        }
     }
 }
