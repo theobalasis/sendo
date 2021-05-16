@@ -2,6 +2,7 @@
 using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -20,6 +21,7 @@ namespace Sendo.UwpApp
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            ConfigureSettings();
         }
 
         /// <summary>
@@ -85,6 +87,11 @@ namespace Sendo.UwpApp
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        private void ConfigureSettings()
+        {
+            ApplicationData.Current.LocalSettings.Values["ServerUrl"] = "localhost:5000";
         }
     }
 }

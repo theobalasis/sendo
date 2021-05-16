@@ -37,9 +37,10 @@ namespace Sendo.UwpApp.Views
         public SettingsPage()
         {
             InitializeComponent();
-            String text1 = ApplicationData.Current.LocalSettings.Values["ServerUrl"] as string;
-            String text2 = ApplicationData.Current.LocalSettings.Values["ServerUri"] as string;
-            if (text1!=null && text2!=null ) {
+            string text1 = ApplicationData.Current.LocalSettings.Values["ServerUrl"] as string;
+            string text2 = ApplicationData.Current.LocalSettings.Values["ServerUri"] as string;
+            if (text1 != null && text2 != null)
+            {
                 ServerUrl.Text = text1;
                 ServerUri.Text = text2;
             }

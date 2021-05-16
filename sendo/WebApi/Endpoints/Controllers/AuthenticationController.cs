@@ -19,6 +19,19 @@ namespace Sendo.WebApi.Endpoints.Controllers
         [HttpPost]
         public async Task<IActionResult> Authenticate(Credentials credentials)
         {
+            var split = credentials.MailAddress.Split('@');
+            var domain = split[split.Length - 1];
+            
+            if (credentials.SmtpHost == "")
+            {
+                credentials.SmtpHost = $"smtp.{domain}";
+            }
+
+            if (credentials.ImapHost == "")
+            {
+                credentials.ImapHost = $"imap.{domain}";
+            }
+
             var token = await _authenticationService.AuthenticateAsync(credentials);
 
             if (token != null)

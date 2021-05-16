@@ -1,6 +1,5 @@
 ﻿using Sendo.UwpApp.Services;
 using System;
-using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
 

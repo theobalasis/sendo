@@ -1,31 +1,46 @@
-﻿using System;
+﻿using Sendo.UwpApp.Services;
+using System;
 using System.Diagnostics;
+using Windows.Storage;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
+using Windows.UI.Xaml.Media;
 
 namespace Sendo.UwpApp.Views
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// Handles logging in to the app.
     /// </summary>
     public sealed partial class Login : Page
     {
+        private readonly HttpService _httpService;
+
         public Login()
         {
             this.InitializeComponent();
+            _httpService = new HttpService();
         }
 
-        private void doLogin(object sender, RoutedEventArgs e)
+        private async void SimpleLogin(object sender, RoutedEventArgs e)
         {
-            String un = EmailField.Text;
-            String pw = PasswordField.Password;
-            Debug.WriteLine(un + ":" + pw);
-            Frame.Navigate(typeof(Home));
+            String email = EmailField.Text;
+            String password = PasswordField.Password;
+
+            var response = await _httpService.PostAsync("authentication", $"{{ \"MailAddress\":\"{email}\", \"Password\":\"{password}\" }}");
+            if (response.IsSuccessful)
+            {
+                ApplicationData.Current.LocalSettings.Values["SessionToken"] = response.Content;
+                Frame.Navigate(typeof(ShellPage));
+            }
+            else
+            {
+                EmailField.BorderBrush = new SolidColorBrush(Colors.Red);
+                PasswordField.BorderBrush = new SolidColorBrush(Colors.Red);
+            }
         }
 
-        private void toAdvanced(object sender, RoutedEventArgs e)
+        private void AdvancedLogin(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(AdvancedLogin));
         }

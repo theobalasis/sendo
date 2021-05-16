@@ -157,7 +157,8 @@ namespace Sendo.UwpApp.Views
                 //JObject json = JObject.Parse(raw);
                 Varlistadd(json);
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 Debug.WriteLine(ex);
             }
         }
