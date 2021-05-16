@@ -20,10 +20,6 @@ using sendo.Views;
 
 namespace Sendo.Views
 {
-    // TODO WTS: You can edit the text for the menu in String/en-US/Resources.resw
-    // You can show pages in different ways (update main view, navigate, right pane, new windows or dialog) using MenuNavigationHelper class.
-    // Read more about MenuBar project type here:
-    // https://github.com/Microsoft/WindowsTemplateStudio/blob/release/docs/UWP/projectTypes/menubar.md
     public sealed partial class ShellPage : Page, INotifyPropertyChanged
     {
         private readonly KeyboardAccelerator _altLeftKeyboardAccelerator = BuildKeyboardAccelerator(VirtualKey.Left, VirtualKeyModifiers.Menu);
@@ -32,7 +28,7 @@ namespace Sendo.Views
         public ShellPage()
         {
             InitializeComponent();
-            NavigationService.Frame = shellFrame;
+            NavigationService.Frame = ContentFrame;
             ApplicationView.PreferredLaunchViewSize = new Size(1650,1024);
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
             ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(1440, 1024));
