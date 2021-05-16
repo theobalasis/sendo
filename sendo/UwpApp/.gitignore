@@ -1,5 +1,3 @@
-.vs/**
-.vscode/**
-.editorconfig
+﻿.vs/**
 obj/**
 bin/**

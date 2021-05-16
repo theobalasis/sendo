@@ -1,14 +1,13 @@
-﻿using System;
+﻿using Sendo.UwpApp.Helpers;
+using System;
 using System.Threading.Tasks;
-
-using Sendo.Helpers;
 
 using Windows.ApplicationModel.Core;
 using Windows.Storage;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 
-namespace Sendo.Services
+namespace Sendo.UwpApp.Services
 {
     public static class ThemeSelectorService
     {

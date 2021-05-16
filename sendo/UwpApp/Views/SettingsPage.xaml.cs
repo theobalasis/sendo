@@ -1,11 +1,8 @@
-﻿using System;
+﻿using Sendo.UwpApp.Helpers;
+using Sendo.UwpApp.Services;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-
-using Sendo.Helpers;
-using Sendo.Services;
 
 using Windows.ApplicationModel;
 using Windows.Storage;
@@ -13,7 +10,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
-namespace Sendo.Views
+namespace Sendo.UwpApp.Views
 {
     // TODO WTS: Add other settings as necessary. For help see https://github.com/Microsoft/WindowsTemplateStudio/blob/release/docs/UWP/pages/settings-codebehind.md
     // TODO WTS: Change the URL for your privacy policy in the Resource File, currently set to https://YourPrivacyUrlGoesHere
@@ -96,12 +93,12 @@ namespace Sendo.Views
 
         private void SaveUrlSetting(object sender, RoutedEventArgs e)
         {
-            ApplicationData.Current.LocalSettings.Values["ServerUrl"]= ServerUrl.Text;
+            ApplicationData.Current.LocalSettings.Values["ServerUrl"] = ServerUrl.Text;
         }
 
         private void SaveUriSetting(object sender, RoutedEventArgs e)
         {
-           ApplicationData.Current.LocalSettings.Values["ServerUri"] = ServerUri.Text;
+            ApplicationData.Current.LocalSettings.Values["ServerUri"] = ServerUri.Text;
         }
     }
 }

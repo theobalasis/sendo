@@ -4,14 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text.RegularExpressions;
 using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace Sendo.Views
+namespace Sendo.UwpApp.Views
 {
     public sealed partial class Editor : Page, INotifyPropertyChanged
     {
@@ -22,7 +20,7 @@ namespace Sendo.Views
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void Set<T>(ref T storage, T value, [CallerMemberName]string propertyName = null)
+        private void Set<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
         {
             if (Equals(storage, value))
             {
@@ -38,8 +36,8 @@ namespace Sendo.Views
         private void AddVar(object sender, ItemClickEventArgs e)
         {
             var selection = editor.Document.Selection;
-            String replace = "<"+e.ClickedItem.ToString()+">";
-            selection.SetText(Windows.UI.Text.TextSetOptions.None, replace );
+            String replace = "<" + e.ClickedItem.ToString() + ">";
+            selection.SetText(Windows.UI.Text.TextSetOptions.None, replace);
             selection.StartPosition = selection.StoryLength;
         }
         private async void OpenButton_Click(object sender, RoutedEventArgs e)
@@ -150,7 +148,7 @@ namespace Sendo.Views
         private async void fetchitems(object sender, RoutedEventArgs e)
         {
             VariableList.Items.Clear();
-            HttpDataService url =new HttpDataService(ApplicationData.Current.LocalSettings.Values["ServerUrl"] as String);
+            HttpDataService url = new HttpDataService(ApplicationData.Current.LocalSettings.Values["ServerUrl"] as String);
             String uri = ApplicationData.Current.LocalSettings.Values["ServerUri"] as String;
             try
             {
@@ -164,7 +162,8 @@ namespace Sendo.Views
             }
         }
 
-        private void Varlistadd(JObject json) {
+        private void Varlistadd(JObject json)
+        {
             foreach (var pair in json)
             {
                 if (pair.Value.HasValues == true)
@@ -193,7 +192,7 @@ namespace Sendo.Views
             HttpDataService url = new HttpDataService(ApplicationData.Current.LocalSettings.Values["ServerUrl"] as String);
             String uri = ApplicationData.Current.LocalSettings.Values["ServerUri"] as String;
             JObject json = await url.GetAsync<JObject>(uri, null, true);
-            var comp = Varsplit(editortext , patern, json);
+            var comp = Varsplit(editortext, patern, json);
             Windows.Storage.Pickers.FileSavePicker savePicker = new Windows.Storage.Pickers.FileSavePicker();
             savePicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
 
@@ -219,8 +218,9 @@ namespace Sendo.Views
                 }
             }
         }
-        private String Varsplit(String crude,string replacer, JObject data ) {
-            
+        private String Varsplit(String crude, string replacer, JObject data)
+        {
+
             string comp = String.Empty;
             string oldvalue = String.Empty;
             string newvalue = String.Empty;
@@ -228,19 +228,20 @@ namespace Sendo.Views
             {
                 if (pair.Value.HasValues == true)
                 {
-                   comp=Varsplit(crude, replacer, (JObject)pair.Value);
-                   crude = comp;
+                    comp = Varsplit(crude, replacer, (JObject)pair.Value);
+                    crude = comp;
                 }
-                else { 
-                oldvalue = "<" + pair.Key + ">";
-                newvalue = "" + pair.Value + "";
-                //Debug.WriteLine(oldvalue);
-                //Debug.WriteLine(newvalue);
-                comp = crude.Replace(oldvalue, newvalue);
-                crude = comp;
+                else
+                {
+                    oldvalue = "<" + pair.Key + ">";
+                    newvalue = "" + pair.Value + "";
+                    //Debug.WriteLine(oldvalue);
+                    //Debug.WriteLine(newvalue);
+                    comp = crude.Replace(oldvalue, newvalue);
+                    crude = comp;
                 }
             }
-                return comp;
+            return comp;
         }
     }
 }

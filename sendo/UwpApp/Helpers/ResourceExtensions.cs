@@ -1,9 +1,7 @@
-﻿using System;
-using System.Runtime.InteropServices;
-
+﻿
 using Windows.ApplicationModel.Resources;
 
-namespace Sendo.Helpers
+namespace Sendo.UwpApp.Helpers
 {
     internal static class ResourceExtensions
     {

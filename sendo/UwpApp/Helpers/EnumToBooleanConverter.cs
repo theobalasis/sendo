@@ -2,7 +2,7 @@
 
 using Windows.UI.Xaml.Data;
 
-namespace Sendo.Helpers
+namespace Sendo.UwpApp.Helpers
 {
     public class EnumToBooleanConverter : IValueConverter
     {

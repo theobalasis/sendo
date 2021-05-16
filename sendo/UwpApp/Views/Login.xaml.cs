@@ -1,26 +1,11 @@
-﻿using sendo.Views;
-using Sendo.Helpers;
-using Sendo.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace Sendo.Views
+namespace Sendo.UwpApp.Views
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -36,7 +21,7 @@ namespace Sendo.Views
         {
             String un = EmailField.Text;
             String pw = PasswordField.Password;
-            Debug.WriteLine(un+":"+pw);
+            Debug.WriteLine(un + ":" + pw);
             Frame.Navigate(typeof(Home));
         }
 

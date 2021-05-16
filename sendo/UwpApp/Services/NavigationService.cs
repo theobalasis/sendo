@@ -5,7 +5,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
-namespace Sendo.Services
+namespace Sendo.UwpApp.Services
 {
     public static class NavigationService
     {

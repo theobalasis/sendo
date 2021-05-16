@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Sendo.Views.ShellPage"
+    x:Class="Sendo.UwpApp.Views.ShellPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -16,15 +16,7 @@
                          BackRequested="NavView_BackRequested" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" >
 
         <winui:NavigationView.MenuItems>
-            <winui:NavigationViewItem Tag="home" Content="Home">
-                <winui:NavigationViewItem.Icon>
-                    <SymbolIcon Symbol="Home"/>
-                </winui:NavigationViewItem.Icon>
-            </winui:NavigationViewItem>
-            <winui:NavigationViewItemSeparator/>
-            <winui:NavigationViewItemHeader x:Name="MainPagesHeader"
-                                           Content="Main pages"/>
-            <winui:NavigationViewItem Tag="MailTemplates" Content="Mail Templates">
+            <winui:NavigationViewItem Tag="Mail Templates" Content="Mail Templates">
                 <winui:NavigationViewItem.Icon>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEDB3;"/>
                 </winui:NavigationViewItem.Icon>
@@ -39,24 +31,9 @@
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE946;"/>
                 </winui:NavigationViewItem.Icon>
             </winui:NavigationViewItem>
-            <winui:NavigationViewItem Tag="Template Creation" Content="Template Creation">
-                <winui:NavigationViewItem.Icon>
-                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE8A5;"/>
-                </winui:NavigationViewItem.Icon>
-            </winui:NavigationViewItem>
-            <winui:NavigationViewItem Tag="Add Contract" Content="Add Contract">
-                <winui:NavigationViewItem.Icon>
-                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE82E;"/>
-                </winui:NavigationViewItem.Icon>
-            </winui:NavigationViewItem>
-            <winui:NavigationViewItem Tag="Campaign" Content="Campaign">
+            <winui:NavigationViewItem Tag="Campaigns" Content="Campaigns">
                 <winui:NavigationViewItem.Icon>
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE762;"/>
-                </winui:NavigationViewItem.Icon>
-            </winui:NavigationViewItem>
-            <winui:NavigationViewItem Tag="Login" Content="Login">
-                <winui:NavigationViewItem.Icon>
-                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE716;"/>
                 </winui:NavigationViewItem.Icon>
             </winui:NavigationViewItem>
         </winui:NavigationView.MenuItems>
@@ -65,22 +42,5 @@
             <AutoSuggestBox x:Name="NavViewSearchBox" QueryIcon="Find"/>
         </winui:NavigationView.AutoSuggestBox>
         <Frame x:Name="ContentFrame" IsTabStop="True" NavigationFailed="ContentFrame_NavigationFailed" />
-
     </winui:NavigationView>
-    <VisualStateManager.VisualStateGroups>
-        <VisualStateGroup>
-            <VisualState>
-                <VisualState.StateTriggers>
-                    <AdaptiveTrigger MinWindowHeight="1024" MinWindowWidth="1440"/>
-                </VisualState.StateTriggers>
-                <VisualState.Setters>
-                    <!-- Remove the next 3 lines for left-only navigation. -->
-                    <Setter Target="NavView.PaneDisplayMode" Value="Top"/>
-
-                    <!-- Leave the next line for left-only navigation. -->
-
-                </VisualState.Setters>
-            </VisualState>
-        </VisualStateGroup>
-    </VisualStateManager.VisualStateGroups>
 </Page>

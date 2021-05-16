@@ -4,19 +4,18 @@
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-  xmlns:genTemplate="http://schemas.microsoft.com/appx/developer/windowsTemplateStudio"
-  IgnorableNamespaces="uap mp genTemplate">
+  IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="sendo"
-    Publisher="CN=Akman"
+    Name="dc375d4e-0c26-4a74-8fb4-7b177c306efc"
+    Publisher="CN=Theo"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="683EE347-9335-4525-A31A-2874F34CC2E5" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="dc375d4e-0c26-4a74-8fb4-7b177c306efc" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>sendo</DisplayName>
-    <PublisherDisplayName>Akman</PublisherDisplayName>
+    <DisplayName>Sendo</DisplayName>
+    <PublisherDisplayName>Placeholder</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -31,32 +30,22 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="sendo.App">
+      EntryPoint="Sendo.UwpApp.App">
       <uap:VisualElements
-        DisplayName="ms-resource:AppDisplayName"
+        DisplayName="Sendo"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="ms-resource:AppDescription"
+        Description="Windows app for the Sendo mass mail service."
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="landscape"/></uap:InitialRotationPreference>
       </uap:VisualElements>
-
-      <Extensions>
-      </Extensions>
     </Application>
   </Applications>
 
   <Capabilities>
     <Capability Name="internetClient" />
   </Capabilities>
-
-  <genTemplate:Metadata>
-    <genTemplate:Item Name="generator" Value="Windows Template Studio"/>
-    <genTemplate:Item Name="wizardVersion" Version="v3.9.20351.2" />
-    <genTemplate:Item Name="templatesVersion" Version="v3.9.20351.2" />
-    <genTemplate:Item Name="projectType" Value="MenuBar" />
-    <genTemplate:Item Name="framework" Value="CodeBehind" />
-    <genTemplate:Item Name="platform" Value="Uwp" />
-  </genTemplate:Metadata>
 </Package>
